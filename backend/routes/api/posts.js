@@ -20,7 +20,7 @@ router.get('/', (req, res)=> {
         .catch(err => res.status(404).json({ NoBlog: 'No post found'}));
 });
 //get post by id
-router.get('/:id', (req, res)=> {
+router.get('/:id',  (req, res)=> {
     Post.findById(req.params.id)
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ NoBlog: 'No post found with that ID'}));
@@ -29,7 +29,7 @@ router.get('/:id', (req, res)=> {
 //@desc   Create Post
 //@access Private
 
-router.post('/', (req, res) => {
+router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     const newPost= new Post({
         title: req.body.title,
         heading: req.body.heading,
@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
 
 //update a post , Private
 
-router.post('/:id/update', (req, res) => {
+router.post('/:id/update', passport.authenticate('jwt', {session: false}), (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
             if(req.body.title != undefined)
@@ -63,7 +63,7 @@ router.post('/:id/update', (req, res) => {
 //Add main Body
 //Private
 
-router.post('/mb/:id', (req, res) => {
+router.post('/mb/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
             const newmb = {
@@ -79,7 +79,7 @@ router.post('/mb/:id', (req, res) => {
 
 //Update Main Body
 //Private
-router.post('/:id/update/mb/:mb_id', (req, res) => {
+router.post('/:id/update/mb/:mb_id', passport.authenticate('jwt', {session: false}), (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
             if(post.main_body.filter(mb => mb._id.toString() ===req.params.mb_id).length === 0) {
@@ -99,7 +99,7 @@ router.post('/:id/update/mb/:mb_id', (req, res) => {
 // Remove main Body
 //Private
 
-router.delete('/mb/:id/:mb_id', (req, res) => {
+router.delete('/mb/:id/:mb_id', passport.authenticate('jwt', {session: false}), (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
             if(post.main_body.filter(mb => mb._id.toString() ===req.params.mb_id).length === 0) {
@@ -117,24 +117,7 @@ router.delete('/mb/:id/:mb_id', (req, res) => {
 // Delete Post 
 // Private
 
-router.delete('/:id', (req, res)=>{
-    // After Validation
-    // Profile.findOne({ user: req.user.id})
-    // .then(profile => {
-    //     Post.findById(req.params.id)
-    //         .then(post =>{
-    //             //Check Post Owner
-    //             if(post.user.toString() !== req.user.id)
-    //             {
-    //                 return res.status(401).json({ Unauthorized: 'User is Not Authroized' });
-    //             }
-
-    //             //Delete
-    //             post.remove().then(()=> res.json({ success: true}));
-    //         })
-    //         .catch(err=>res.status(404).json({ NoBlog: 'No post Found'}));
-    // });
-
+router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res)=>{
     Post.findById(req.params.id)
             .then(post =>{
                 //Delete
@@ -198,7 +181,7 @@ router.post('/recomment/:id/:comment_id', (req, res)=>{
 
 // Delete , Private
 
-router.delete('/:id/:comment_id', (req, res)=>{
+router.delete('/:id/:comment_id', passport.authenticate('jwt', {session: false}), (req, res)=>{
     Post.findById(req.params.id)
         .then(post => {
             if(post.comments.filter(comment => comment._id.toString() ===req.params.comment_id).length === 0) {

@@ -70,6 +70,10 @@ const PostSchema = new Schema ({
         }
     ],
 
+    tags: {
+        type: String
+    },
+
     date: {
         type: Date,
         default: Date.now

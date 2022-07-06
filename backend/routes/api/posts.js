@@ -33,7 +33,8 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     const newPost= new Post({
         title: req.body.title,
         heading: req.body.heading,
-        link: req.body.link 
+        link: req.body.link,
+        tags: req.body.tags 
     });
     //console.log(newPost);
 
@@ -54,6 +55,7 @@ router.post('/:id/update', passport.authenticate('jwt', {session: false}), (req,
             post.heading = req.body.heading;
             }
             post.link = req.body.link;
+            post.tags = req.body.tags;
             post.save().then(post => res.json(post));
         })
         .catch(err => res.status(404).json({ noBlog: 'No post found'}));

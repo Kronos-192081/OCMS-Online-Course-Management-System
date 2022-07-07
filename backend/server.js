@@ -7,6 +7,7 @@ const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
 const announcements = require('./routes/api/announcements');
+const courses = require('./routes/api/courses');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 app.use('/api/announcements', announcements);
+app.use('/api/courses', courses);
 
 const port = process.env.PORT || 5000;
 

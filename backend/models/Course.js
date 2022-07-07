@@ -26,6 +26,10 @@ const CourseSchema = new Schema ({
 
             subjects: [
                 {
+                    Name: {
+                        type: String
+                    },
+                    
                     descr: {
                         type: String
                     },

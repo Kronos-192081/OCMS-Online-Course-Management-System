@@ -5,9 +5,6 @@
 /.pnp
 .pnp.js
 
-# Dependencies of Package.json
-yarn.lock
-
 # testing
 /coverage
 

@@ -51,20 +51,58 @@ li a:before {
   height: 100%;
   bottom: 0;
   left: 0;
-  border-radius: 15%;
+  border-radius: 5%;
   background-color: #dee3e4;
   z-index: -1;
   transform: scale(0);
   transition: transform 0.2s ease-in-out;
 }
 
+
 li a:hover:before,
 li a:focus:before {
   transform: scale(1);
+}
+
+li.right{
+  float: left;
 }
 
 .newstyle{
   justify-content: center;
   text-align: center;
   margin:auto;
+}
+
+.border1{
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.row1{
+  margin:auto;
+}
+
+.pad {
+  margin: 8px;
+
+}
+
+.pad {
+  margin: 5.5px;
+
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.pad1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

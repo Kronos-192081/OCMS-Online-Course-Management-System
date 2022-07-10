@@ -1,11 +1,120 @@
 const Test = () => {
     return (
-        <div className="container">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget blandit magna. Etiam malesuada eget leo at pellentesque. Donec ac pretium est, ut euismod nisl. Etiam accumsan, lacus quis fermentum mollis, leo nisi congue ipsum, at elementum libero tellus eget nisl. Nullam quis mollis dui. Pellentesque facilisis ultrices leo. Aliquam lacinia tellus erat, sit amet porttitor augue imperdiet vulputate. Etiam porta dolor tortor, at gravida lacus imperdiet in. Morbi lacinia elit nec commodo pulvinar. Quisque interdum leo et orci lobortis, at lacinia ipsum finibus. Vestibulum porta justo nec erat sagittis pretium. Maecenas mauris enim, dapibus id erat non, fringilla egestas diam. Etiam augue sapien, pulvinar ut diam et, tempor consectetur justo. Nunc pulvinar ante et mauris imperdiet mattis. Vivamus blandit sed tellus id malesuada. Aenean eu tortor at sapien pretium fringilla. Nunc vitae euismod libero. In euismod blandit mi ac laoreet. Sed eros arcu, dapibus nec augue quis, ullamcorper pulvinar orci. Integer et sem pharetra nulla vehicula aliquam. Sed ligula nisl, scelerisque ut libero non, posuere accumsan nunc. Proin placerat condimentum ante, non rhoncus purus mollis quis. Donec nec sem tempus, egestas est sit amet, tincidunt enim. Proin ut diam vitae leo tempor varius eu quis felis. Suspendisse vitae faucibus ipsum. Nullam finibus suscipit suscipit. Nulla viverra vestibulum tellus, eget dignissim leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In bibendum sed nibh vitae hendrerit. Cras vel odio tempus, sollicitudin erat non, porta tortor. Suspendisse luctus risus ornare, accumsan tellus eu, blandit metus. Sed a posuere nisl, at pulvinar libero. Suspendisse condimentum erat ut orci tristique, ac porta magna dapibus. Nunc lorem libero, suscipit id feugiat efficitur, iaculis eget sem. Mauris posuere elit id tempus dapibus. Curabitur feugiat eleifend eros, ac venenatis massa tempus sed. Praesent efficitur egestas libero, non aliquam nulla malesuada commodo. Cras nisl nunc, facilisis interdum ullamcorper nec, malesuada vitae elit. Phasellus sodales libero sit amet justo gravida, nec auctor augue vehicula. Ut dictum, urna ac rhoncus aliquam, felis nibh gravida odio, eget porta nisl mi at nunc. Mauris at tincidunt augue. Quisque dui diam, pellentesque id massa non, porta molestie massa. Vestibulum neque nisi, sodales quis diam ac, ornare iaculis mauris. Sed eget consequat est. Sed gravida nunc in odio faucibus, ut vehicula neque maximus. Nullam tempus dolor eget felis efficitur blandit. Nulla lacinia orci ac arcu lobortis ultrices. Ut vestibulum vestibulum turpis, nec rutrum nunc venenatis vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi nec rutrum odio, a varius tellus. Morbi ut dui eget velit vestibulum aliquet venenatis in massa. Vivamus vulputate pharetra gravida. Pellentesque accumsan diam a sollicitudin volutpat. Sed euismod feugiat efficitur. Phasellus varius lacus nec sapien mattis fringilla. Praesent vestibulum vestibulum felis, ac varius leo luctus et. Sed nec scelerisque velit. Vivamus dignissim dapibus sollicitudin. Vestibulum id libero dictum magna consequat lacinia. Aliquam est urna, scelerisque ut pulvinar ut, sagittis non lectus. Phasellus bibendum mattis quam, vitae pharetra magna pretium at.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget blandit magna. Etiam malesuada eget leo at pellentesque. Donec ac pretium est, ut euismod nisl. Etiam accumsan, lacus quis fermentum mollis, leo nisi congue ipsum, at elementum libero tellus eget nisl. Nullam quis mollis dui. Pellentesque facilisis ultrices leo. Aliquam lacinia tellus erat, sit amet porttitor augue imperdiet vulputate. Etiam porta dolor tortor, at gravida lacus imperdiet in. Morbi lacinia elit nec commodo pulvinar. Quisque interdum leo et orci lobortis, at lacinia ipsum finibus. Vestibulum porta justo nec erat sagittis pretium. Maecenas mauris enim, dapibus id erat non, fringilla egestas diam. Etiam augue sapien, pulvinar ut diam et, tempor consectetur justo. Nunc pulvinar ante et mauris imperdiet mattis. Vivamus blandit sed tellus id malesuada. Aenean eu tortor at sapien pretium fringilla. Nunc vitae euismod libero. In euismod blandit mi ac laoreet. Sed eros arcu, dapibus nec augue quis, ullamcorper pulvinar orci. Integer et sem pharetra nulla vehicula aliquam. Sed ligula nisl, scelerisque ut libero non, posuere accumsan nunc. Proin placerat condimentum ante, non rhoncus purus mollis quis. Donec nec sem tempus, egestas est sit amet, tincidunt enim. Proin ut diam vitae leo tempor varius eu quis felis. Suspendisse vitae faucibus ipsum. Nullam finibus suscipit suscipit. Nulla viverra vestibulum tellus, eget dignissim leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In bibendum sed nibh vitae hendrerit. Cras vel odio tempus, sollicitudin erat non, porta tortor. Suspendisse luctus risus ornare, accumsan tellus eu, blandit metus. Sed a posuere nisl, at pulvinar libero. Suspendisse condimentum erat ut orci tristique, ac porta magna dapibus. Nunc lorem libero, suscipit id feugiat efficitur, iaculis eget sem. Mauris posuere elit id tempus dapibus. Curabitur feugiat eleifend eros, ac venenatis massa tempus sed. Praesent efficitur egestas libero, non aliquam nulla malesuada commodo. Cras nisl nunc, facilisis interdum ullamcorper nec, malesuada vitae elit. Phasellus sodales libero sit amet justo gravida, nec auctor augue vehicula. Ut dictum, urna ac rhoncus aliquam, felis nibh gravida odio, eget porta nisl mi at nunc. Mauris at tincidunt augue. Quisque dui diam, pellentesque id massa non, porta molestie massa. Vestibulum neque nisi, sodales quis diam ac, ornare iaculis mauris. Sed eget consequat est. Sed gravida nunc in odio faucibus, ut vehicula neque maximus. Nullam tempus dolor eget felis efficitur blandit. Nulla lacinia orci ac arcu lobortis ultrices. Ut vestibulum vestibulum turpis, nec rutrum nunc venenatis vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi nec rutrum odio, a varius tellus. Morbi ut dui eget velit vestibulum aliquet venenatis in massa. Vivamus vulputate pharetra gravida. Pellentesque accumsan diam a sollicitudin volutpat. Sed euismod feugiat efficitur. Phasellus varius lacus nec sapien mattis fringilla. Praesent vestibulum vestibulum felis, ac varius leo luctus et. Sed nec scelerisque velit. Vivamus dignissim dapibus sollicitudin. Vestibulum id libero dictum magna consequat lacinia. Aliquam est urna, scelerisque ut pulvinar ut, sagittis non lectus. Phasellus bibendum mattis quam, vitae pharetra magna pretium at.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget blandit magna. Etiam malesuada eget leo at pellentesque. Donec ac pretium est, ut euismod nisl. Etiam accumsan, lacus quis fermentum mollis, leo nisi congue ipsum, at elementum libero tellus eget nisl. Nullam quis mollis dui. Pellentesque facilisis ultrices leo. Aliquam lacinia tellus erat, sit amet porttitor augue imperdiet vulputate. Etiam porta dolor tortor, at gravida lacus imperdiet in. Morbi lacinia elit nec commodo pulvinar. Quisque interdum leo et orci lobortis, at lacinia ipsum finibus. Vestibulum porta justo nec erat sagittis pretium. Maecenas mauris enim, dapibus id erat non, fringilla egestas diam. Etiam augue sapien, pulvinar ut diam et, tempor consectetur justo. Nunc pulvinar ante et mauris imperdiet mattis. Vivamus blandit sed tellus id malesuada. Aenean eu tortor at sapien pretium fringilla. Nunc vitae euismod libero. In euismod blandit mi ac laoreet. Sed eros arcu, dapibus nec augue quis, ullamcorper pulvinar orci. Integer et sem pharetra nulla vehicula aliquam. Sed ligula nisl, scelerisque ut libero non, posuere accumsan nunc. Proin placerat condimentum ante, non rhoncus purus mollis quis. Donec nec sem tempus, egestas est sit amet, tincidunt enim. Proin ut diam vitae leo tempor varius eu quis felis. Suspendisse vitae faucibus ipsum. Nullam finibus suscipit suscipit. Nulla viverra vestibulum tellus, eget dignissim leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In bibendum sed nibh vitae hendrerit. Cras vel odio tempus, sollicitudin erat non, porta tortor. Suspendisse luctus risus ornare, accumsan tellus eu, blandit metus. Sed a posuere nisl, at pulvinar libero. Suspendisse condimentum erat ut orci tristique, ac porta magna dapibus. Nunc lorem libero, suscipit id feugiat efficitur, iaculis eget sem. Mauris posuere elit id tempus dapibus. Curabitur feugiat eleifend eros, ac venenatis massa tempus sed. Praesent efficitur egestas libero, non aliquam nulla malesuada commodo. Cras nisl nunc, facilisis interdum ullamcorper nec, malesuada vitae elit. Phasellus sodales libero sit amet justo gravida, nec auctor augue vehicula. Ut dictum, urna ac rhoncus aliquam, felis nibh gravida odio, eget porta nisl mi at nunc. Mauris at tincidunt augue. Quisque dui diam, pellentesque id massa non, porta molestie massa. Vestibulum neque nisi, sodales quis diam ac, ornare iaculis mauris. Sed eget consequat est. Sed gravida nunc in odio faucibus, ut vehicula neque maximus. Nullam tempus dolor eget felis efficitur blandit. Nulla lacinia orci ac arcu lobortis ultrices. Ut vestibulum vestibulum turpis, nec rutrum nunc venenatis vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi nec rutrum odio, a varius tellus. Morbi ut dui eget velit vestibulum aliquet venenatis in massa. Vivamus vulputate pharetra gravida. Pellentesque accumsan diam a sollicitudin volutpat. Sed euismod feugiat efficitur. Phasellus varius lacus nec sapien mattis fringilla. Praesent vestibulum vestibulum felis, ac varius leo luctus et. Sed nec scelerisque velit. Vivamus dignissim dapibus sollicitudin. Vestibulum id libero dictum magna consequat lacinia. Aliquam est urna, scelerisque ut pulvinar ut, sagittis non lectus. Phasellus bibendum mattis quam, vitae pharetra magna pretium at.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget blandit magna. Etiam malesuada eget leo at pellentesque. Donec ac pretium est, ut euismod nisl. Etiam accumsan, lacus quis fermentum mollis, leo nisi congue ipsum, at elementum libero tellus eget nisl. Nullam quis mollis dui. Pellentesque facilisis ultrices leo. Aliquam lacinia tellus erat, sit amet porttitor augue imperdiet vulputate. Etiam porta dolor tortor, at gravida lacus imperdiet in. Morbi lacinia elit nec commodo pulvinar. Quisque interdum leo et orci lobortis, at lacinia ipsum finibus. Vestibulum porta justo nec erat sagittis pretium. Maecenas mauris enim, dapibus id erat non, fringilla egestas diam. Etiam augue sapien, pulvinar ut diam et, tempor consectetur justo. Nunc pulvinar ante et mauris imperdiet mattis. Vivamus blandit sed tellus id malesuada. Aenean eu tortor at sapien pretium fringilla. Nunc vitae euismod libero. In euismod blandit mi ac laoreet. Sed eros arcu, dapibus nec augue quis, ullamcorper pulvinar orci. Integer et sem pharetra nulla vehicula aliquam. Sed ligula nisl, scelerisque ut libero non, posuere accumsan nunc. Proin placerat condimentum ante, non rhoncus purus mollis quis. Donec nec sem tempus, egestas est sit amet, tincidunt enim. Proin ut diam vitae leo tempor varius eu quis felis. Suspendisse vitae faucibus ipsum. Nullam finibus suscipit suscipit. Nulla viverra vestibulum tellus, eget dignissim leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In bibendum sed nibh vitae hendrerit. Cras vel odio tempus, sollicitudin erat non, porta tortor. Suspendisse luctus risus ornare, accumsan tellus eu, blandit metus. Sed a posuere nisl, at pulvinar libero. Suspendisse condimentum erat ut orci tristique, ac porta magna dapibus. Nunc lorem libero, suscipit id feugiat efficitur, iaculis eget sem. Mauris posuere elit id tempus dapibus. Curabitur feugiat eleifend eros, ac venenatis massa tempus sed. Praesent efficitur egestas libero, non aliquam nulla malesuada commodo. Cras nisl nunc, facilisis interdum ullamcorper nec, malesuada vitae elit. Phasellus sodales libero sit amet justo gravida, nec auctor augue vehicula. Ut dictum, urna ac rhoncus aliquam, felis nibh gravida odio, eget porta nisl mi at nunc. Mauris at tincidunt augue. Quisque dui diam, pellentesque id massa non, porta molestie massa. Vestibulum neque nisi, sodales quis diam ac, ornare iaculis mauris. Sed eget consequat est. Sed gravida nunc in odio faucibus, ut vehicula neque maximus. Nullam tempus dolor eget felis efficitur blandit. Nulla lacinia orci ac arcu lobortis ultrices. Ut vestibulum vestibulum turpis, nec rutrum nunc venenatis vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi nec rutrum odio, a varius tellus. Morbi ut dui eget velit vestibulum aliquet venenatis in massa. Vivamus vulputate pharetra gravida. Pellentesque accumsan diam a sollicitudin volutpat. Sed euismod feugiat efficitur. Phasellus varius lacus nec sapien mattis fringilla. Praesent vestibulum vestibulum felis, ac varius leo luctus et. Sed nec scelerisque velit. Vivamus dignissim dapibus sollicitudin. Vestibulum id libero dictum magna consequat lacinia. Aliquam est urna, scelerisque ut pulvinar ut, sagittis non lectus. Phasellus bibendum mattis quam, vitae pharetra magna pretium at.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget blandit magna. Etiam malesuada eget leo at pellentesque. Donec ac pretium est, ut euismod nisl. Etiam accumsan, lacus quis fermentum mollis, leo nisi congue ipsum, at elementum libero tellus eget nisl. Nullam quis mollis dui. Pellentesque facilisis ultrices leo. Aliquam lacinia tellus erat, sit amet porttitor augue imperdiet vulputate. Etiam porta dolor tortor, at gravida lacus imperdiet in. Morbi lacinia elit nec commodo pulvinar. Quisque interdum leo et orci lobortis, at lacinia ipsum finibus. Vestibulum porta justo nec erat sagittis pretium. Maecenas mauris enim, dapibus id erat non, fringilla egestas diam. Etiam augue sapien, pulvinar ut diam et, tempor consectetur justo. Nunc pulvinar ante et mauris imperdiet mattis. Vivamus blandit sed tellus id malesuada. Aenean eu tortor at sapien pretium fringilla. Nunc vitae euismod libero. In euismod blandit mi ac laoreet. Sed eros arcu, dapibus nec augue quis, ullamcorper pulvinar orci. Integer et sem pharetra nulla vehicula aliquam. Sed ligula nisl, scelerisque ut libero non, posuere accumsan nunc. Proin placerat condimentum ante, non rhoncus purus mollis quis. Donec nec sem tempus, egestas est sit amet, tincidunt enim. Proin ut diam vitae leo tempor varius eu quis felis. Suspendisse vitae faucibus ipsum. Nullam finibus suscipit suscipit. Nulla viverra vestibulum tellus, eget dignissim leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In bibendum sed nibh vitae hendrerit. Cras vel odio tempus, sollicitudin erat non, porta tortor. Suspendisse luctus risus ornare, accumsan tellus eu, blandit metus. Sed a posuere nisl, at pulvinar libero. Suspendisse condimentum erat ut orci tristique, ac porta magna dapibus. Nunc lorem libero, suscipit id feugiat efficitur, iaculis eget sem. Mauris posuere elit id tempus dapibus. Curabitur feugiat eleifend eros, ac venenatis massa tempus sed. Praesent efficitur egestas libero, non aliquam nulla malesuada commodo. Cras nisl nunc, facilisis interdum ullamcorper nec, malesuada vitae elit. Phasellus sodales libero sit amet justo gravida, nec auctor augue vehicula. Ut dictum, urna ac rhoncus aliquam, felis nibh gravida odio, eget porta nisl mi at nunc. Mauris at tincidunt augue. Quisque dui diam, pellentesque id massa non, porta molestie massa. Vestibulum neque nisi, sodales quis diam ac, ornare iaculis mauris. Sed eget consequat est. Sed gravida nunc in odio faucibus, ut vehicula neque maximus. Nullam tempus dolor eget felis efficitur blandit. Nulla lacinia orci ac arcu lobortis ultrices. Ut vestibulum vestibulum turpis, nec rutrum nunc venenatis vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi nec rutrum odio, a varius tellus. Morbi ut dui eget velit vestibulum aliquet venenatis in massa. Vivamus vulputate pharetra gravida. Pellentesque accumsan diam a sollicitudin volutpat. Sed euismod feugiat efficitur. Phasellus varius lacus nec sapien mattis fringilla. Praesent vestibulum vestibulum felis, ac varius leo luctus et. Sed nec scelerisque velit. Vivamus dignissim dapibus sollicitudin. Vestibulum id libero dictum magna consequat lacinia. Aliquam est urna, scelerisque ut pulvinar ut, sagittis non lectus. Phasellus bibendum mattis quam, vitae pharetra magna pretium at.
+        <div className="center container" id="content">
+            <div className="row row1 mx-n5">
+            <div className="col-sm-3 border1">
+                <br />
+                <h4> <b>Recent Announcements ... </b></h4>
+                <br />
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <a href = "https://www.google.com">See All Announcements</a>
+            </div>
+            <div className="col-sm-5 border1">
+            <br />
+                <h4 className= "pad2 center" > <b>Courses</b></h4>
+            <div class="row">
+            <div className="col-sm-4">
+                <div class="card pad1">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+                </div>
+
+                <div className="col-sm-4">
+                <div class="card pad1">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+                </div>
+
+                <div className="col-sm-4">
+                <div class="card pad1">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+                </div>
+
+                <div className="col-sm-4">
+                <div class="card pad1">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+                </div>
+
+                <div className="col-sm-4">
+                <div class="card pad1">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+                </div>
+
+                <div className="col-sm-4">
+                <div class="card pad1">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+                </div>
+            </div>
+            <a href = "https://www.google.com">See All Courses </a>
+            </div>
+            <div className="col-sm-3 border1">
+            <br />
+                <h4> <b>Recent Posts ... </b></h4>
+                <br />
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <div className="alert alert-primary pad" role="alert">
+                This is a primary alert—check it out!
+            </div>
+            <a href = "https://www.google.com">See All Posts</a>
+            </div>
+            </div>
+            <br />
+            <br />
+           
+        
         </div>
     );
 }

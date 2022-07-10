@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light fixed-top">
+    <nav className="navbar navbar-expand-lg bg-light fixed-top hover-nav">
     <div className="container">
       <a className="navbar-brand" href="#"><img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="34" height="28" className="d-inline-block align-text-top" />
       &nbsp; Bootstrap</a>

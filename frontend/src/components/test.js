@@ -1,32 +1,47 @@
 const Test = () => {
     return (
-        <div className="center container" id="content">
+        <div className=" container" id="content">
             <div className="row row1 mx-n5">
-            <div className="col-sm-3 border1">
+            <div className="col-sm-3 border1 scr">
+            <div className="head">
                 <br />
-                <h4> <b>Recent Announcements ... </b></h4>
+                <h4 className= "pad2 center" > <b>Recent Announcements</b></h4>
                 <br />
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
+                </div>
+                <div className="list-group">
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt"> Make Your Mobile Device More Secure</h5>
+          </div>
+          <p className="mb-1">With great power (of mobile devices), there must also come great responsibility. Three things you can do now to protect yourself and Comcast.</p>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
+          </div>
+          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
+          </div>
+          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
+          </div>
+          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
+        </a>
+        </div>
+            <a href = "https://www.google.com" className="right">See All Announcements</a>
             </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <a href = "https://www.google.com">See All Announcements</a>
-            </div>
-            <div className="col-sm-5 border1">
-            <br />
+            <div className="col-sm-5 border1 scr">
+                <div className="head">
+                <br />
                 <h4 className= "pad2 center" > <b>Courses</b></h4>
-            <div class="row">
+                </div>
+            <div class="row center">
             <div className="col-sm-4">
                 <div class="card pad1">
                 <div class="card-body">
@@ -87,28 +102,41 @@ const Test = () => {
                 </div>
                 </div>
             </div>
-            <a href = "https://www.google.com">See All Courses </a>
+            <a href = "https://www.google.com" className="right">See All Courses </a>
             </div>
-            <div className="col-sm-3 border1">
-            <br />
+            <div className="col-sm-3 border1 scr">
+            <div className = "head center">
+                <br />
                 <h4> <b>Recent Posts ... </b></h4>
                 <br />
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <div className="alert alert-primary pad" role="alert">
-                This is a primary alert—check it out!
-            </div>
-            <a href = "https://www.google.com">See All Posts</a>
+                </div>
+                <div className="list-group">
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt"> Make Your Mobile Device More Secure</h5>
+          </div>
+          <p className="mb-1">With great power (of mobile devices), there must also come great responsibility. Three things you can do now to protect yourself and Comcast.</p>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
+          </div>
+          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
+          </div>
+          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
+          </div>
+          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
+        </a>
+        </div>
+            <a href = "https://www.google.com" className="right">See All Posts</a>
             </div>
             </div>
             <br />

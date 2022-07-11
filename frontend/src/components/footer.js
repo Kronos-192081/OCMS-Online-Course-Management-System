@@ -18,8 +18,9 @@ const Footer = () => {
             <li> <a href="#" className="icoFacebook" title="Facebook"> <i className="fa fa-facebook"> </i> </a> </li> 
             <li> <a href="#"> <i className="fa fa-youtube" title="YouTube" aria-hidden="true"></i></a></li>
             </ul>  
-        </div>  
-      </div>  
+        </div>
+        <br />
+      </div>
       <div className="col-md-3 col-sm-6">  
         <div className="footer-pad">  
           <h4 className="white"> Important Links</h4>  

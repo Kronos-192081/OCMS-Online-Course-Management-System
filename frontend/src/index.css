@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');  
 
 /* base styles */
 * {
@@ -23,6 +24,19 @@ body{
   }
 }
 
+.bgval{
+  background-color:rgb(3,34,110);
+}
+
+.tex{
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.big{
+  font-size: 25px;
+}
+
 .hover-nav ul {
   list-style: none;
   margin: 0;
@@ -44,15 +58,14 @@ body{
   z-index: 0;
 }
 
-li a:before {
+li.navg a:before {
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
   bottom: 0;
   left: 0;
-  border-radius: 5%;
-  background-color: #dee3e4;
+  background-color: #020350;
   z-index: -1;
   transform: scale(0);
   transition: transform 0.2s ease-in-out;
@@ -248,3 +261,150 @@ padding-top: 0;
 .list-com-announcements{
  border-bottom: 1px solid #D1D1D1; 
 }
+
+.list-com-announcements:hover{
+  background-color: rgb(225, 226, 234); 
+ }
+
+/* .colour {
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(78,73,228,1) 42%, rgba(0,7,24,0.9850140739889706) 100%, rgba(59,82,233,1) 100%, rgba(45,95,238,1) 100%);
+}
+
+.bottom {
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(3,0,106,1) 0%, rgba(3,34,110,0.9850140739889706) 100%, rgba(59,82,233,1) 100%, rgba(45,95,238,1) 100%);
+} */
+
+h2 {  
+  padding: 25px 0;  
+  text-align: center;  
+  color: #fff;    
+  } 
+.white {
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+} 
+.white1 {
+  color: white;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+
+.white2 {
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+  footer {  
+    background: rgb(3,34,110);
+    /* background: linear-gradient(90deg, rgba(3,34,110,1) 0%, rgba(59,82,233,1) 43%, rgba(56,85,234,1) 56%, rgba(45,95,238,1) 66%, rgba(3,0,106,1) 100%, rgba(3,34,110,0.9850140739889706) 100%);    */
+    color: white;  
+    margin-top:100px;  
+  }  
+  footer a {  
+    color: #fff;  
+    font-size: 14px;  
+    transition-duration: 0.2s;  
+  }  
+  footer a:hover {  
+    color: #e0f15d;  
+    text-decoration: none;  
+  }      
+  .copy {  
+    font-size: 12px;  
+    padding: 10px;  
+    border-top: 1px solid #FFFFFF;  
+  }  
+  .footer-middle {  
+    padding-top: 2em;  
+    color: white;  
+  }  
+  ul.social-network {  
+    list-style: none;  
+    display: inline;  
+    margin-left: 0 !important;  
+    padding: 0;  
+  }  
+  ul.social-network li {  
+    display: inline;  
+    margin: 0 5px;  
+  }  
+    
+  .social-network a.icoFacebook {  
+    background-color: #3B5998;  
+  }  
+  .social-network a.icoLinkedin:hover {  
+    background-color: #007bb7;  
+  }  
+  .social-network a.icoFacebook i  
+  {  
+    color: #fff;  
+  }  
+  .social-network a.icoLinkedin:hover i {  
+    color: #fff;  
+  }  
+  .social-network a.socialIcon:hover {  
+    color: #44BCDD;  
+  }  
+  .socialHoverClass {  
+    color: #44BCDD;  
+  }  
+  .social-circle li a {  
+    display: inline-block;  
+    position: relative;  
+    margin: 0 auto 0 auto;  
+    -moz-border-radius: 50%;  
+    -webkit-border-radius: 50%;  
+    border-radius: 50%;  
+    text-align: center;  
+    width: 30px;  
+    height: 30px;  
+    font-size: 15px;  
+  }  
+  .social-circle li i {  
+    margin: 0;  
+    line-height: 30px;  
+    text-align: center;  
+  }  
+  /* .social-circle li a:hover i  
+  {  
+    -moz-transform: rotate(360deg);  
+    -webkit-transform: rotate(360deg);  
+    -ms--transform: rotate(360deg);  
+    transform: rotate(360deg);  
+    -webkit-transition: all 0.2s;  
+    -moz-transition: all 0.2s;  
+    -o-transition: all 0.2s;  
+    -ms-transition: all 0.2s;  
+    transition: all 0.2s;  
+  }   */
+  .triggeredHover {  
+    -moz-transform: rotate(360deg);  
+    -webkit-transform: rotate(360deg);  
+    -ms--transform: rotate(360deg);  
+    transform: rotate(360deg);  
+    -webkit-transition: all 0.2s;  
+    -moz-transition: all 0.2s;  
+    -o-transition: all 0.2s;  
+    -ms-transition: all 0.2s;  
+    transition: all 0.2s;  
+  }  
+  .social-circle i {  
+    color: #ff0404; 
+    font-size: 20px; 
+    -webkit-transition: all 0.8s;  
+    -moz-transition: all 0.8s;  
+    -o-transition: all 0.8s;  
+    -ms-transition: all 0.8s;  
+    transition: all 0.8s;  
+  }
+   
+  .social-network a {  
+    background-color: #F9F9F9;
+  }  
+
+  iframe {
+    border: 0;
+  }
+  

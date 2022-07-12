@@ -45,7 +45,7 @@ const Footer = () => {
         </div>  
       </div>  
         <div className="col-md-3">  
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.8544526388023!2d87.2999663650785!3d22.321343635312672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d44078e32a45f%3A0xcb2833f7389434a6!2sMMM%20Hall%20Garden%2C%20IIT%20Kharagpur%2C%20Kharagpur%2C%20West%20Bengal%20721302!5e0!3m2!1sen!2sin!4v1657561865922!5m2!1sen!2sin" width="300" height="200" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>                
+        <iframe className = "design" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.8544526388023!2d87.2999663650785!3d22.321343635312672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d44078e32a45f%3A0xcb2833f7389434a6!2sMMM%20Hall%20Garden%2C%20IIT%20Kharagpur%2C%20Kharagpur%2C%20West%20Bengal%20721302!5e0!3m2!1sen!2sin!4v1657561865922!5m2!1sen!2sin" width="300" height="200" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>                
     </div>  
     </div> 
     <br /> 

@@ -15,12 +15,11 @@ const PostSchema = new Schema ({
     },
 
     heading: {
-        type: String,
-        required: true
+        type: String
     },
     
     link: {
-        type: String,
+        type: String
     },
 
     main_body: [

@@ -1,4 +1,12 @@
+import useFetch from "./useFetch";
+import Announcements from "./announcement";
+import Post from "./post";
+import Course from "./course";
+
 const Test = () => {
+  const { error, isPending, data: announcements } = useFetch('http://localhost:5000/api/announcements');
+  const { error: error1, isPending: isPending1, data: posts } = useFetch('http://localhost:5000/api/posts');
+  const { error: error2, isPending: isPending2, data: courses } = useFetch('http://localhost:5000/api/courses');
     return (
         <div className=" container" id="content">
           {/* <div className="containing1">
@@ -18,32 +26,9 @@ const Test = () => {
                 <h4 className= "pad2 center" > <b>Recent Announcements</b></h4>
                 <br />
                 </div>
-                <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt"> Make Your Mobile Device More Secure</h5>
-          </div>
-          <p className="mb-1">With great power (of mobile devices), there must also come great responsibility. Three things you can do now to protect yourself and Comcast.</p>
-        </a>
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
-          </div>
-          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
-        </a>
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
-          </div>
-          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
-        </a>
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
-          </div>
-          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
-        </a>
-        </div>
+                { error && <div>{ error }</div> }
+                { isPending && <div>Loading...</div> }
+                { announcements && <Announcements announcements={announcements.slice(0, 5)} /> }
             <a href = "https://www.google.com" className="right">See All Announcements</a>
             </div>
             <div className="col-sm-5 border1 scr">
@@ -51,67 +36,10 @@ const Test = () => {
                 <br />
                 <h4 className= "pad2 center" > <b>Courses</b></h4>
                 </div>
-            <div className="row center">
-            <div className="col-sm-4">
-                <div className="card pad1">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-                </div>
+                { error2 && <div>{ error2 }</div> }
+                { isPending2 && <div>Loading...</div> }
+                { courses && <Course courses={courses} /> }
 
-                <div className="col-sm-4">
-                <div className="card pad1">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-                </div>
-
-                <div className="col-sm-4">
-                <div className="card pad1">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-                </div>
-
-                <div className="col-sm-4">
-                <div className="card pad1">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-                </div>
-
-                <div className="col-sm-4">
-                <div className="card pad1">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-                </div>
-
-                <div className="col-sm-4">
-                <div className="card pad1">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-                </div>
-            </div>
             <a href = "https://www.google.com" className="right">See All Courses </a>
             </div>
             <div className="col-sm-3 border1 scr">
@@ -120,32 +48,9 @@ const Test = () => {
                 <h4> <b>Recent Posts </b></h4>
                 <br />
                 </div>
-                <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt"> Make Your Mobile Device More Secure</h5>
-          </div>
-          <p className="mb-1">With great power (of mobile devices), there must also come great responsibility. Three things you can do now to protect yourself and Comcast.</p>
-        </a>
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
-          </div>
-          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
-        </a>
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
-          </div>
-          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
-        </a>
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start list-com-announcements">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1 cobalt">Upgrades to Web Security: BLUE COAT</h5>
-          </div>
-          <p className="mb-1">On Tuesday morning February 13, we will complete a network change that will redirect all web traffic...</p>
-        </a>
-        </div>
+                { error1 && <div>{ error1 }</div> }
+                { isPending1 && <div>Loading...</div> }
+                { posts && <Post posts={posts.slice(0, 5)} /> }
             <a href = "https://www.google.com" className="right">See All Posts</a>
             </div>
             </div>

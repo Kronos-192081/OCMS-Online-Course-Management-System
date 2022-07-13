@@ -191,6 +191,12 @@ h4{
   font-weight: 400;
 }
 
+.bold{
+  color: #f80d09;
+  font-weight: bold;
+  font-size: 36px;
+}
+
 h5{
   color: #1F6F9A;
   font-weight: bold;

@@ -1,3 +1,5 @@
+import { renderMarkup } from "react-render-markup";
+
 const Course = ( { courses } ) => {
     return ( 
         <div className="row center">
@@ -7,7 +9,7 @@ const Course = ( { courses } ) => {
                 <div className="card-body" key={course._id}>
                 <h5 className="card-title">{course.course_name}</h5>
                 <p className="card-text">{course.note}</p>
-                <a href="#" className="btn btn-primary">Click here to see more ...</a>
+                <a href="#" className="btn btn-primary">Click here ...</a>
                 </div>
                 </div>
                 </div>

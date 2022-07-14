@@ -15,7 +15,7 @@ const NavBar = () => {
             <Link className="nav-link active" aria-current="page" to={{pathname: '/', hash: '#'}}><span className="tex">Home</span></Link>
           </li>
           <li className="nav-item navg">
-            <a className="nav-link active" aria-current="page" href="#content"><span className="tex">Courses</span></a>
+            <Link className="nav-link active" aria-current="page" to="/courses"><span className="tex">Courses</span></Link>
           </li>
           <li className="nav-item navg">
             <Link className="nav-link active" aria-current="page" to="/announcements"><span className="tex">Announcements</span></Link>

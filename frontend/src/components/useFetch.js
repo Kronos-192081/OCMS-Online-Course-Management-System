@@ -13,7 +13,8 @@ const useFetch = (url) => {
       .then(res => {
         if (!res.ok) { // error coming back from server
           throw Error('could not fetch the data for that resource');
-        } 
+        }
+        // console.table(res.json()); 
         return res.json();
       })
       .then(data => {

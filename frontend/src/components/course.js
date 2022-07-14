@@ -1,4 +1,5 @@
 import { renderMarkup } from "react-render-markup";
+import { Link } from "react-router-dom";
 
 const Course = ( { courses } ) => {
     return ( 
@@ -9,7 +10,7 @@ const Course = ( { courses } ) => {
                 <div className="card-body" key={course._id}>
                 <h5 className="card-title">{course.course_name}</h5>
                 <p className="card-text">{course.note}</p>
-                <a href="#" className="btn btn-primary">Click here ...</a>
+                <Link to={ `/courses/${course._id}`} className="btn btn-primary">Click here ...</Link>
                 </div>
                 </div>
                 </div>

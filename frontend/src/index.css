@@ -167,6 +167,14 @@ li.right{
   overflow-y: scroll;
 }
 
+.scr2 {
+  border-radius: 10px;
+  border: 0;
+  margin-bottom: 1.5em;
+  height:42rem;
+  overflow-y: scroll;
+}
+
 .head {
   position: sticky;
   top: 0;
@@ -469,3 +477,15 @@ h2 {
     justify-content: center;
     margin:auto;
   }
+
+  .containing3 {
+    justify-content: center;
+    margin: auto;
+  }
+
+  @media (min-width: 1200px) {
+    .containing3{
+        max-width: 1150px;
+    }
+  }
+    

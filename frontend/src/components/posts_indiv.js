@@ -1,6 +1,7 @@
 import Print_Post from "./posts_indiv_print";
 import useFetch from "./useFetch";
 import { useParams } from "react-router-dom";
+import Post from "./post";
 
 const Post_indi = () => {
     const { id } = useParams();

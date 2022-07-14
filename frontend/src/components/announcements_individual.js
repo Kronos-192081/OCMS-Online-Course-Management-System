@@ -7,7 +7,7 @@ const Announce_indi = () => {
     const { data: announcement, error, isPending } = useFetch('http://localhost:5000/api/announcements/' + id);
     return ( 
         <div className=" container" id="content">
-        <div className = "containing1">
+        <div className = "containing2">
         <div className = "center bold">Announcement</div>
         <br />
         { error && <div>{ error }</div> }

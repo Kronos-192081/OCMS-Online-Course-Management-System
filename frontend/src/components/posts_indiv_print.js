@@ -19,12 +19,12 @@ const Print_Post = ( {post} ) => {
               <iframe className="responsive-iframe" width="560" height="315" src= {post.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <br />
-            <a href= {post.link}><h6>Link</h6></a>
+            <a href= {post.link} target="_blank"><h6>Link</h6></a>
             </div> }
             <br />
             <p> <b>Date of post: { post_date } </b></p>
             <h6><b>Description: </b> {post.heading}</h6>
-            {/* <h6> { renderMarkup(post.content) }</h6> */}
+            { <h6> { renderMarkup(post.content) }</h6> }
         </div>
      );
 }

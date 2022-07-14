@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 //Create Post Schema
 
 const PostSchema = new Schema ({
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'users'
-    // },
 
     title: {
         type: String,
@@ -22,16 +18,13 @@ const PostSchema = new Schema ({
         type: String
     },
 
-    main_body: [
-        {
-            Question: {
-                type: String
-            },
-            Answer: {
-                type: String
-            }
-        }
-    ],
+    main_body: {
+        type: String
+    },
+
+    content: {
+        type: String
+    },
 
     likes: {
         type: Number,

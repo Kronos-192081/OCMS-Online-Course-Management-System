@@ -11,8 +11,9 @@ const Announce = () => {
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
         { announcements && <Announcements announcements={ announcements } /> }
-        <br />
         </div>
+        <br />
+        <br />
         </div>
      );
 }

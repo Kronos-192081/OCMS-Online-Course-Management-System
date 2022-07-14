@@ -34,6 +34,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
         title: req.body.title,
         heading: req.body.heading,
         link: req.body.link,
+        content: req.body.content,
         tags: req.body.tags 
     });
     //console.log(newPost);
@@ -55,6 +56,7 @@ router.post('/:id/update', passport.authenticate('jwt', {session: false}), (req,
             post.heading = req.body.heading;
             }
             post.link = req.body.link;
+            post.content = req.body.content;
             post.tags = req.body.tags;
             post.save().then(post => res.json(post));
         })
@@ -62,59 +64,59 @@ router.post('/:id/update', passport.authenticate('jwt', {session: false}), (req,
 
 });
 
-//Add main Body
-//Private
+// //Add main Body
+// //Private
 
-router.post('/mb/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
-    Post.findById(req.params.id)
-        .then(post => {
-            const newmb = {
-                Question: req.body.Question,
-                Answer: req.body.Answer
-            }
+// router.post('/mb/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+//     Post.findById(req.params.id)
+//         .then(post => {
+//             const newmb = {
+//                 Question: req.body.Question,
+//                 Answer: req.body.Answer
+//             }
 
-            post.main_body.unshift(newmb);
-            post.save().then(post => res.json(post));
-        })
-        .catch(err => res.status(404).json({ noBlog: 'No post found'}));
-});
+//             post.main_body.unshift(newmb);
+//             post.save().then(post => res.json(post));
+//         })
+//         .catch(err => res.status(404).json({ noBlog: 'No post found'}));
+// });
 
-//Update Main Body
-//Private
-router.post('/:id/update/mb/:mb_id', passport.authenticate('jwt', {session: false}), (req, res) => {
-    Post.findById(req.params.id)
-        .then(post => {
-            if(post.main_body.filter(mb => mb._id.toString() ===req.params.mb_id).length === 0) {
-                return res.status(404).json({ nocontent: 'Content does not exist'});
-            }
-            const ind = post.main_body
-                .map(item => item._id.toString())
-                .indexOf(req.params.mb_id);
-            console.log(ind)
-            post.main_body[ind].Question = req.body.Question;
-            post.main_body[ind].Answer = req.body.Answer;
-            post.save().then(post => res.json(post));
-        })
-        .catch(err => res.status(404).json({ NoBlog: 'No post found'}));
-})
+// //Update Main Body
+// //Private
+// router.post('/:id/update/mb/:mb_id', passport.authenticate('jwt', {session: false}), (req, res) => {
+//     Post.findById(req.params.id)
+//         .then(post => {
+//             if(post.main_body.filter(mb => mb._id.toString() ===req.params.mb_id).length === 0) {
+//                 return res.status(404).json({ nocontent: 'Content does not exist'});
+//             }
+//             const ind = post.main_body
+//                 .map(item => item._id.toString())
+//                 .indexOf(req.params.mb_id);
+//             console.log(ind)
+//             post.main_body[ind].Question = req.body.Question;
+//             post.main_body[ind].Answer = req.body.Answer;
+//             post.save().then(post => res.json(post));
+//         })
+//         .catch(err => res.status(404).json({ NoBlog: 'No post found'}));
+// })
 
-// Remove main Body
-//Private
+// // Remove main Body
+// //Private
 
-router.delete('/mb/:id/:mb_id', passport.authenticate('jwt', {session: false}), (req, res) => {
-    Post.findById(req.params.id)
-        .then(post => {
-            if(post.main_body.filter(mb => mb._id.toString() ===req.params.mb_id).length === 0) {
-                return res.status(404).json({ nocontent: 'Content does not exist'});
-            }
-            const ind = post.main_body
-                .map(item => item._id.toString())
-                .indexOf(req.params.mb_id);
-            post.main_body.splice(ind, 1);
-            post.save().then(post => res.json(post));
-        })
-        .catch(err => res.status(404).json({ NoBlog: 'No post found'}));
-})
+// router.delete('/mb/:id/:mb_id', passport.authenticate('jwt', {session: false}), (req, res) => {
+//     Post.findById(req.params.id)
+//         .then(post => {
+//             if(post.main_body.filter(mb => mb._id.toString() ===req.params.mb_id).length === 0) {
+//                 return res.status(404).json({ nocontent: 'Content does not exist'});
+//             }
+//             const ind = post.main_body
+//                 .map(item => item._id.toString())
+//                 .indexOf(req.params.mb_id);
+//             post.main_body.splice(ind, 1);
+//             post.save().then(post => res.json(post));
+//         })
+//         .catch(err => res.status(404).json({ NoBlog: 'No post found'}));
+// })
 
 // Delete Post 
 // Private

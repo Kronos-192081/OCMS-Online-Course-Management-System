@@ -11,9 +11,9 @@ const Posts = () => {
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
         { posts && <Post posts={ posts } /> }
-        <br />
-        <br/>
         </div>
+        <br />
+        <br />
         </div>
      );
 }

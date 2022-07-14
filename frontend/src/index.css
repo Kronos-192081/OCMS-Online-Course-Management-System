@@ -159,6 +159,14 @@ li.right{
   overflow-y: scroll;
 }
 
+.scr1 {
+  border-radius: 10px;
+  border: 0;
+  margin-bottom: 1.5em;
+  height:45rem;
+  overflow-y: scroll;
+}
+
 .head {
   position: sticky;
   top: 0;

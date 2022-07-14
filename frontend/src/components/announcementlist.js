@@ -5,8 +5,8 @@ const Announce = () => {
     const { error, isPending, data: announcements } = useFetch('http://localhost:5000/api/announcements');
     return ( 
         <div className=" container" id="content">
-        <div className = "containing2">
-        <div className = "center bold">All Announcements</div>
+        <div className = "containing2 scr1">
+        <div className = "pad2 center bold">All Announcements</div>
         <br />
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }

@@ -1,5 +1,6 @@
 import { renderMarkup } from "react-render-markup";
 
+
 function reformatDate(dateStr)
 {
   let dArr = dateStr.split("-");  // ex input "2010-01-18"
@@ -7,16 +8,23 @@ function reformatDate(dateStr)
 }
 
 const Print_Post = ( {post} ) => {
-    let announce_date = reformatDate(post.date.toString().substr(0, 10));
+    let post_date = reformatDate(post.date.toString().substr(0, 10));
     return ( 
         <div className = "Individual">
-            <h5 className = "center"> {post.Heading} </h5>
+            <h5 className = "center"> {post.title} </h5>
             <br></br>
-            <p> <b>Date of post: { announce_date } </b></p>
-            <h6> <b>Links: </b> { post.link }</h6>
-            <h6> <b>Subject(s): </b> { post.Subject }</h6>
-            <h6> <b> { post.Time_Duration && ( "Time Duration : ") && post.subject } </b></h6>
-            <h6> { renderMarkup(post.content) }</h6>
+            { post.link &&
+            <div className = "containing1">
+            <div className="container1">
+              <iframe className="responsive-iframe" width="560" height="315" src= {post.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br />
+            <a href= {post.link}><h6>Link</h6></a>
+            </div> }
+            <br />
+            <p> <b>Date of post: { post_date } </b></p>
+            <h6><b>Description: </b> {post.heading}</h6>
+            {/* <h6> { renderMarkup(post.content) }</h6> */}
         </div>
      );
 }

@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 
 const Announce_indi = () => {
     const { id } = useParams();
-    console.log(id);
-    const { data: announcement, error, isPending } = useFetch('http://localhost:5000/announcements/' + id);
+    const { data: announcement, error, isPending } = useFetch('http://localhost:5000/api/announcements/' + id);
     return ( 
         <div className=" container" id="content">
         <div className = "containing1">

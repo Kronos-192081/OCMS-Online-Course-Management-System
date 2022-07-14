@@ -16,7 +16,7 @@ const Print_Announce = ( {announcement} ) => {
             <p> <b>Date of announcement: { announce_date } </b></p>
             <h6> <b>Links: </b> { announcement.link }</h6>
             <h6> <b>Subject(s): </b> { announcement.Subject }</h6>
-            <h6> <b> { announcement.Time_Duration && ( "Time Duration : ") && announcement.subject } </b></h6>
+            <h6> <b> Time Duration: { announcement.Time_Duration} </b></h6>
             <h6> { renderMarkup(announcement.content) }</h6>
         </div>
      );

@@ -8,6 +8,7 @@ import Announce from './components/announcementlist';
 import Announce_indi from './components/announcements_individual';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Posts from './components/postlist';
+import Post_indi from './components/posts_indiv';
 
 function App() {
   return (
@@ -19,14 +20,17 @@ function App() {
         <Home />
         <Test />
       </Route>
-      <Route path="/announcements">
+      <Route exact path="/announcements">
         <Announce />
       </Route>
-      <Route path="/posts">
+      <Route exact path="/posts">
         <Posts />
       </Route>
-      <Route path="/google/:id">
+      <Route path="/announcements/:id">
         <Announce_indi />
+      </Route>
+      <Route path="/posts/:id">
+        <Post_indi />
       </Route>
       </Switch> 
       <Footer />  

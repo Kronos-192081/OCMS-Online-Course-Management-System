@@ -11,6 +11,9 @@ import Posts from './components/postlist';
 import Post_indi from './components/posts_indiv';
 import Courses from './components/courselist';
 import Class from './components/classlist';
+import Subjects from './components/subjectlist';
+import Proceedings from './components/subject_course_pro';
+import Error from './components/error_page';
 
 function App() {
   return (
@@ -34,11 +37,24 @@ function App() {
       <Route path="/announcements/:id">
         <Announce_indi />
       </Route>
-      <Route path="/courses/:id">
+      <Route exact path="/courses/:id">
         <Class />
       </Route>
+
+      <Route exact path="/courses/:id/:class_id">
+        <Subjects />
+      </Route>
+
+      <Route exact path="/courses/:id/:class_id/:pro_id">
+        <Proceedings />
+      </Route>
+
       <Route path="/posts/:id">
         <Post_indi />
+      </Route>
+
+      <Route path="*">
+        <Error />
       </Route>
       </Switch> 
       <Footer />  

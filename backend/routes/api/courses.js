@@ -197,7 +197,7 @@ router.post('/sub/subject/table/:id/:sub_id/:subject_id', passport.authenticate(
                 video_link: req.body.video_link,
                 reading_link: req.body.reading_link
             }
-            course.sub_course[ind].subjects[ind1].table.unshift(newtable)
+            course.sub_course[ind].subjects[ind1].table.push(newtable)
             course.save().then(course => res.json(course));
         })
         .catch(err => res.status(404).json({ noCourse: 'No course with that ID found' }));

@@ -488,4 +488,25 @@ h2 {
         max-width: 1150px;
     }
   }
+
+  .tablestyle {
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 6px;
+  }
+
+  th{
+    background-color: #06397b;
+    color: white;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
     

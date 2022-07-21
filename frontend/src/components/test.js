@@ -9,19 +9,11 @@ const Test = () => {
   const { error: error2, isPending: isPending2, data: courses } = useFetch('http://localhost:5000/api/courses');
     return (
         <div className=" container" id="content">
-          {/* <div className="containing1">
-          <div className="container1">
-          <iframe className="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/HIiX3r5n27M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        </div>
-        <div className = "containing2">
-          <b>Heelo Everyone!!</b>
-        </div> */}
           <br />
           <br />
             <div className="row row1 mx-n5">
             <div className="col-sm-3 border1 scr">
-            <div className="head">
+                <div className="head">
                 <br />
                 <h4 className= "pad2 center" > <b>Recent Announcements</b></h4>
                 <br />
@@ -29,7 +21,7 @@ const Test = () => {
                 { error && <div>{ error }</div> }
                 { isPending && <div>Loading...</div> }
                 { announcements && <Announcements announcements={announcements.slice(0, 5)} /> }
-            <a href = "https://www.google.com" className="right">See All Announcements</a>
+            <a href = "/announcements" className="right">See All Announcements</a>
             </div>
             <div className="col-sm-5 border1 scr">
                 <div className="head">
@@ -39,11 +31,10 @@ const Test = () => {
                 { error2 && <div>{ error2 }</div> }
                 { isPending2 && <div>Loading...</div> }
                 { courses && <Course courses={courses} /> }
-
-            <a href = "https://www.google.com" className="right">See All Courses </a>
+            <a href = "/courses" className="right">See All Courses </a>
             </div>
             <div className="col-sm-3 border1 scr">
-            <div className = "head center">
+                <div className = "head center">
                 <br />
                 <h4> <b>Recent Posts </b></h4>
                 <br />
@@ -51,13 +42,11 @@ const Test = () => {
                 { error1 && <div>{ error1 }</div> }
                 { isPending1 && <div>Loading...</div> }
                 { posts && <Post posts={posts.slice(0, 5)} /> }
-            <a href = "https://www.google.com" className="right">See All Posts</a>
+            <a href = "/posts" className="right">See All Posts</a>
             </div>
             </div>
             <br />
             <br />
-           
-        
         </div>
     );
 }

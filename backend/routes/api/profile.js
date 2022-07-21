@@ -3,7 +3,6 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-
 //Profile:
 const Profile = require('../../models/Profile');
 //user:
@@ -49,7 +48,5 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) =>{
         })
         .catch(err => res.status(404));
 });
-
-
 
 module.exports = router;

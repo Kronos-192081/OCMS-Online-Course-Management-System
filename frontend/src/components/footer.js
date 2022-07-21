@@ -25,9 +25,9 @@ const Footer = () => {
         <div className="footer-pad">  
           <h4 className="white"> Important Links</h4>  
           <ul className="list-unstyled">  
-            <li ><a href="#" className ="white1"> CBSE Official site</a> </li> 
-            <li><a href="#" className ="white1"> CBSE Results Official site</a> </li>
-            <li><a href="#" className ="white1">CUET official site</a> </li>  
+            <li><a href="#" className ="white1">CBSE Official site</a></li> 
+            <li><a href="#" className ="white1">CBSE Results Official site</a></li>
+            <li><a href="#" className ="white1">CUET official site</a></li>  
             <li><a href="#" className ="white1">CLAT official site</a></li> 
             <li><a href="#" className ="white1">AILET official site</a></li>   
             <li><a href="#" className ="white1">UPSC official site</a></li>    

@@ -4,6 +4,9 @@ import NavBar from './components/NavBar';
 import Test from './components/test'
 import Home from './components/home';
 import Footer from './components/footer';
+import Login from './components/login';
+import Dashboard from './components/dashboard';
+import DashNavBar from './components/dashNavBar';
 import Announce from './components/announcementlist';
 import Announce_indi from './components/announcements_individual';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -19,11 +22,20 @@ function App() {
   return (
     <Router>
     <div className="App">
-    <NavBar />
+    <Switch>
+    <Route exact path="/dashboard">
+      <DashNavBar />
+      <Dashboard />
+    </Route>
+    <Route path="*">
+      <NavBar />
       <Switch>
       <Route exact path="/">
         <Home />
         <Test />
+      </Route>
+      <Route exact path="/login">
+        <Login />
       </Route>
       <Route exact path="/announcements">
         <Announce />
@@ -34,30 +46,28 @@ function App() {
       <Route exact path="/courses">
         <Courses />
       </Route>
-      <Route path="/announcements/:id">
+      <Route exact path="/announcements/:id">
         <Announce_indi />
       </Route>
       <Route exact path="/courses/:id">
         <Class />
       </Route>
-
       <Route exact path="/courses/:id/:class_id">
         <Subjects />
       </Route>
-
       <Route exact path="/courses/:id/:class_id/:pro_id">
         <Proceedings />
       </Route>
-
-      <Route path="/posts/:id">
+      <Route exact path="/posts/:id">
         <Post_indi />
       </Route>
-
       <Route path="*">
         <Error />
       </Route>
       </Switch> 
-      <Footer />  
+      <Footer />
+    </Route>
+    </Switch>
     </div>
     </Router>
   );

@@ -1,4 +1,5 @@
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const Announcements = ({ announcements }) => {
     return ( 
     <div className="list-group">
@@ -13,5 +14,5 @@ const Announcements = ({ announcements }) => {
       </div>
     );
 }
- 
+
 export default Announcements;

@@ -9,7 +9,7 @@ router.get('/', (req, res)=> {
     Announcement.find()
         .sort({ date: -1})
         .then(announcements => res.json(announcements))
-        .catch(err => res.status(404).json({ NoAnn: 'No Announce found'}));
+        .catch(err => res.status(404).json({ NoAnn: 'No Announcements found'}));
 });
 
 router.get('/:id',  (req, res)=> {

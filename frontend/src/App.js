@@ -7,6 +7,8 @@ import Footer from './components/footer';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
 import DashNavBar from './components/dashNavBar';
+import Documentation from './components/documentation';
+import Profile from './components/profile';
 import Announce from './components/announcementlist';
 import Announce_indi from './components/announcements_individual';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -26,6 +28,14 @@ function App() {
     <Route exact path="/dashboard">
       <DashNavBar />
       <Dashboard />
+    </Route>
+    <Route exact path="/profile">
+      <DashNavBar />
+      <Profile />
+    </Route>
+    <Route exact path="/documentation">
+      <DashNavBar />
+      <Documentation />
     </Route>
     <Route path="*">
       <NavBar />

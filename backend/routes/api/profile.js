@@ -8,16 +8,12 @@ const Profile = require('../../models/Profile');
 //user:
 const User = require('../../models/User');
 
-router.get('/test', (req, res) => res.json({msg: 'Profile works'}));
-
 // @ route GET current user's profile
 
-router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
-    Profile.findOne({ user: req.user.id })
+router.post('/', (req, res) => {
+    Profile.findOne({ user: req.body.id })
         .then(profile => {
-            console.log(1);
             if(!profile) {
-                console.log(1);
                 return res.status(404).json({ NoProfile: 'No such profile'});
             }
             res.json(profile);

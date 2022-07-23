@@ -606,7 +606,7 @@ h2 {
   @media (min-width: 767.98px) {
     .navbar {
       top: 0;
-      z-index: 999;
+            z-index: 999;
     }
   }
   
@@ -624,6 +624,32 @@ h2 {
     padding: 10px;
   }
 
-  .imp-pad{
-    padding-top: 1em;
-  }
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.wallpapersafari.com/18/32/ynuYBP.jpg");
+  margin-top: -9.3%;
+  margin-left: -3%;
+  margin-right: -3%;
+  /* Set a specific height */
+  height: 100vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.imp-pad{
+  padding-top: 1em;
+}

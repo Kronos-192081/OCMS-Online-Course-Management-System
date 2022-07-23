@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const token = localStorage.getItem('token');
-  const dash = (token===null) ? {href : "/login"} : {href : "/dashboard"};
+  const dash = (token===null) ? {to : "/login"} : {to : "/dashboard"};
 
   return (
     <nav className="navbar navbar-dark navbar-expand-lg bgval fixed-top hover-nav">
@@ -29,7 +29,7 @@ const NavBar = () => {
         </ul>
         <ul className="navbar-nav">
           <li className="nav-item navg">
-            <a className="nav-link active danger" aria-current="page" {...dash}><span className="tex">SignIn</span></a>
+            <Link className="nav-link active danger" aria-current="page" {...dash}><span className="tex">SignIn</span></Link>
           </li>
         </ul>
       </div>

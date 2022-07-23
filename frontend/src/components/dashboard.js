@@ -36,40 +36,48 @@ const DashBoard = () => {
         </Link>
       </li>
       <li className="nav-item navg1">
-        <a className="nav-link" href="#">
+        <Link className="nav-link active" to="/profile">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           <span className="ml-2">Your Profile</span>
-        </a>
+        </Link>
       </li>
       <li className="nav-item navg1">
-        <a className="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+        <Link className="nav-link active" to="/posts">
+          <img src="https://www.svgrepo.com/show/325504/playlist-play.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Posts</span>
-        </a>
+        </Link>
       </li>
       <li className="nav-item navg1">
-        <a className="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+        <Link className="nav-link active" to="/announcements">
+          <img src="https://www.svgrepo.com/show/234457/megaphone-advertising.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Announcements</span>
-        </a>
+        </Link>
       </li>
       <li className="nav-item navg1">
-        <a className="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+        <Link className="nav-link active" to="/courses">
+          <img src="https://www.svgrepo.com/show/60373/books.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Courses</span>
-        </a>
+        </Link>
       </li>
       <li className="nav-item navg1">
-        <a className="nav-link" href="#">
+        <Link className="nav-link active" to="/documentation">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
           <span className="ml-2">Documentation</span>
-        </a>
+        </Link>
       </li>
     </ul>
 </div>
       </nav>
-      <div className="col-md-9 ml-sm-auto col-lg-10 ">
-          <h1 className=" container center imp-pad" > Welcome {name} !!! </h1>
+      <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
+      <div className="hero-image">
+        <div className="hero-text">
+            <h1>Welcome {name} !!!</h1>
+            <h6>@OCMS version 1.0.1</h6>
+          <span>
+            <Link to="/documentation"><button type="button" class="btn btn-outline-light" style ={{fontWeight:"bold"}}>Documentation</button></Link>
+          </span>
+     </div>
+</div>
       </div>
   </div>
 </div>

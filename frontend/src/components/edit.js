@@ -95,8 +95,10 @@ const Edit = () => {
       <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
       <div className="login">
           <div className="row">
-            <div className="col-md-8 m-auto">
-              <p className="lead text-center">Update Your Profile</p>
+            <div className="col-md-12 m-auto">
+              <br />
+              <h5 className="lead text-center" style ={{fontWeight: "bold"}}>Create or Edit Your Profile</h5>
+              <br />
               <form onSubmit={handleSubmit}>
                 <label>Name</label>
                 <input 
@@ -135,7 +137,8 @@ const Edit = () => {
                     value={contact}
                     onChange={(e) => setContact(e.target.value)}
                 />
-                { !isPending && <button>Update</button> }
+                <br />
+                { !isPending && <button>Create/Edit</button> }
                 { isPending && <button disabled>Updating ...</button> }
             </form>
             </div>

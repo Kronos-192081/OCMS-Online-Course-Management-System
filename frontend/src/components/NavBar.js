@@ -5,7 +5,7 @@ const NavBar = () => {
   const dash = (token===null) ? {to : "/login"} : {to : "/dashboard"};
 
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg bgval hover-nav">
+    <nav className="navbar navbar-dark navbar-expand-lg bgval hover-nav ho_navbar">
     <div className="container">
       <span className="navbar-brand"><img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="logo" width="34" height="28" className="d-inline-block align-text-top" />
       <span className="tex big">&nbsp; OCMS </span></span>

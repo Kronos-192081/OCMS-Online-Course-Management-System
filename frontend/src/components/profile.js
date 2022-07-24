@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -22,11 +24,24 @@ const Profile = () => {
                     .then(resn => {
                         if(resn.ok) resn.json().then(data => {
                             setProfile(data);
+                            setIsPending(false);
+                            setError(null);
                         })
                     })
                 })
             }
+            else
+            {
+              throw Error('could not fetch the data for that resource');
+
+            }
         })
+        .catch(err => {
+          setIsPending(false);
+          setError(err.message);
+        }
+
+        )
     }, [])
 
 
@@ -78,12 +93,15 @@ const Profile = () => {
       </nav>
       <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
         <br />
-        <div className=" container1 imp-pad center-text">
-        { (profile!=null) && <Profile_Display profiles = { profile } />}
-        { (profile==null) && <div><h1>No Profile Found</h1></div>}
+        <br />
+        <div className=" containing2 center-text">
+        { error && <div>{ error }</div> }
+        { isPending && <div>Loading...</div> }
+        { (!error) && (!isPending) && (profile!=null) && <Profile_Display profiles = { profile } />}
+        { (!error)&& (!isPending) && (profile==null) && <div className = "center"><h1>No Profile Found</h1></div>}
         <div className = "center">
-        { (profile == null) && <Link to="/edit"><button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}}>Create</button></Link> }
-        { (profile != null) && <Link to="/edit"><button type="button" class="btn btn-primary" style ={{fontWeight:"bold"}}>Edit</button></Link> }
+        { (!error) && (!isPending) && (profile == null) && <Link to="/edit"><button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}}>Create</button></Link>}
+        { (!error) && (!isPending) && (profile != null) && <Link to="/edit"><button type="button" class="btn btn-primary" style ={{fontWeight:"bold"}}>Edit</button></Link> }
         </div>
      </div>
       </div>

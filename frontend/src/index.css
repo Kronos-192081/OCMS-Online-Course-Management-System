@@ -7,12 +7,12 @@
   font-family: "Quicksand";
   color: #333;
 }
-.navbar {
+
+.ho_navbar{
+  margin-bottom: 40px;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
-
-  /* the rest of your styling */
 }
 
 html, body{
@@ -602,14 +602,14 @@ h2 {
     }
   }
   
-  .navbar {
+  /* .navbar {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
-  }
+  } */
   
   @media (min-width: 767.98px) {
     .navbar {
       top: 0;
-            z-index: 999;
+      z-index: 999;
     }
   }
   
@@ -632,9 +632,7 @@ h2 {
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.wallpapersafari.com/18/32/ynuYBP.jpg");
-  margin-top: -9.3%;
-  margin-left: -3%;
-  margin-right: -3%;
+  margin: auto;
   /* Set a specific height */
   height: 100vh;
 
@@ -642,6 +640,7 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
 }
 .hero-text {
@@ -650,12 +649,13 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(253, 249, 249);
 }
 
 .center-text {
- border: 2px solid;
   padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
 }
 
 .imp-pad{

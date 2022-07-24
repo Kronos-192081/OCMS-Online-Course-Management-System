@@ -1,5 +1,6 @@
 const Home = () => {
     return (<div className="container">
+      <br/>
     <div className="row">
       <div className="col-xl-6 col-lg-6 col-md-6 newstyle">
         <h1><b>Welcome to OCMS</b></h1>

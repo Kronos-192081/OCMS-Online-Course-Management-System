@@ -1,8 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
+import { Notyf } from "notyf";
+import 'notyf/notyf.min.css';
 
-const DashBoard = () => {
+const Edit = () => {
+    const notyf = new Notyf();
     const [name, setName] = useState('');
+    const [address, setAddress] = useState('');
+    const [subjects, setSubjects] = useState('');
+    const [education, setEducation] = useState('');
+    const [teaching, setTeaching] = useState('');
+    const [contact, setContact] = useState('');
+    const [isPending, setIsPending] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
@@ -11,19 +20,34 @@ const DashBoard = () => {
             headers: { "Authorization": token }
             })
             .then(res => {
-                if(res.ok)
-                {
-                    res.json().then((msg) => {
-                    setName(msg.name);
-                    });
-                }
-                else history.push('/login');
+                if(!res.ok) history.push('/login');
         })
     }, [])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = { name, address, subjects, education, teaching, contact };
+        const token = localStorage.getItem('token');
+        setIsPending(true);
+        fetch('http://localhost:5000/api/profile/edit', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" , "Authorization": token },
+        body: JSON.stringify(data)
+        })
+        .then((res) => {
+            setIsPending(false);
+            if(res.ok)
+            {
+                res.json().then((msg) => {
+                    notyf.success("Profile updated successfully!!!");
+                    history.push('/profile');
+                })
+            }
+        })
+    }
+    
     return (
-        
-<div className="container-fluid">
+        <div className="container-fluid">
   <div className="row">
       <nav id="sidebar" className="col-md-3 col-lg-2 d-md-block bgval2 hover-nav1 sidebar collapse ">
       <div className="pt-md-5">
@@ -69,19 +93,58 @@ const DashBoard = () => {
 </div>
       </nav>
       <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
-      <div className="hero-image">
-        <div className="hero-text">
-            <h1>Welcome {name} !!!</h1>
-            <h6>@OCMS version 1.0.1</h6>
-          <span>
-            <Link to="/documentation"><button type="button" class="btn btn-outline-light" style ={{fontWeight:"bold"}}>Documentation</button></Link>
-          </span>
+      <div className="login">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <p className="lead text-center">Update Your Profile</p>
+              <form onSubmit={handleSubmit}>
+                <label>Name</label>
+                <input 
+                    type="text"
+                    required 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <label>Address</label>
+                <input 
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                />
+                <label>Subjects Offered</label>
+                <input 
+                    type="text"
+                    value={subjects}
+                    onChange={(e) => setSubjects(e.target.value)}
+                />
+                <label>Educational Background</label>
+                <input 
+                    type="text"
+                    value={education}
+                    onChange={(e) => setEducation(e.target.value)}
+                />
+                <label>Teaching Experience</label>
+                <input 
+                    type="text"
+                    value={teaching}
+                    onChange={(e) => setTeaching(e.target.value)}
+                />
+                <label>Contact Details</label>
+                <input 
+                    type="text"
+                    value={contact}
+                    onChange={(e) => setContact(e.target.value)}
+                />
+                { !isPending && <button>Update</button> }
+                { isPending && <button disabled>Updating ...</button> }
+            </form>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
   </div>
-</div>
+</div> 
   );
 }
-
-export default DashBoard;
+ 
+export default Edit;

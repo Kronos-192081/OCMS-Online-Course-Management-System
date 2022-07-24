@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard';
 import DashNavBar from './components/dashNavBar';
 import Documentation from './components/documentation';
 import Profile from './components/profile';
+import Edit from './components/edit';
 import Announce from './components/announcementlist';
 import Announce_indi from './components/announcements_individual';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -32,6 +33,10 @@ function App() {
     <Route exact path="/profile">
       <DashNavBar />
       <Profile />
+    </Route>
+    <Route exact path="/edit">
+      <DashNavBar />
+      <Edit />
     </Route>
     <Route exact path="/documentation">
       <DashNavBar />

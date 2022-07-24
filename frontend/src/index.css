@@ -14,9 +14,12 @@
 
   /* the rest of your styling */
 }
-body{
-  padding-top: 4em;
+
+html, body{
+  padding-top: 0px !important;
+  margin-top: 0px !important;
 }
+
 
 @media (min-width: 1200px) {
   .container{
@@ -648,6 +651,11 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+.center-text {
+ border: 2px solid;
+  padding: 10px;
 }
 
 .imp-pad{

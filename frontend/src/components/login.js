@@ -31,7 +31,7 @@ const Login = () => {
                     localStorage.setItem('token', msg.token);
                     notyf.success("Logged in successfully!!!");
                     history.push('/dashboard');
-                });
+                })
             }
             else
             {

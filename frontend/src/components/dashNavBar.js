@@ -10,7 +10,7 @@ const DashNavBar = () => {
   }
 
   return (
-  <nav className="navbar navbar-dark bgval1 p-3 fixed-top">
+  <nav className="navbar navbar-dark bgval1 p-3 ">
   <div className="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
   <span className="navbar-brand"><img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="logo" width="34" height="28" className="d-inline-block align-text-top" />
       <span className="tex big">&nbsp; OCMS </span></span>

@@ -21,15 +21,15 @@ router.post('/', (req, res) => {
         .catch(err => res.status(404));
 });
 
-// If you want to delete a field, just write it null to update
-
-router.post('/', passport.authenticate('jwt', {session: false}), (req, res) =>{
+router.post('/edit', passport.authenticate('jwt', {session: false}), (req, res) =>{
     const profileFields = {};
     profileFields.user = req.user.id;
-    if(req.body.location)profileFields.location = req.body.location;
-    if(req.body.subjects_offered)profileFields.subjects_offered = req.body.subjects_offered;
-    if(req.body.Education_Experience)profileFields.Education_Experience = req.body.Education_Experience;
-    if(req.body.Terms_Conditions)profileFields.Terms_Conditions = req.body.Terms_Conditions;
+    if(req.body.name)profileFields.name = req.body.name;
+    if(req.body.address)profileFields.address = req.body.address;
+    if(req.body.subjects)profileFields.subjects = req.body.subjects;
+    if(req.body.education)profileFields.education = req.body.education;
+    if(req.body.teaching)profileFields.teaching = req.body.teaching;
+    if(req.body.contact)profileFields.contact = req.body.contact;
 
     Profile.findOne({ user: req.user.id })
         .then(profile => {

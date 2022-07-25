@@ -31,12 +31,12 @@ const Test = () => {
                 { error2 && <div>{ error2 }</div> }
                 { isPending2 && <div>Loading...</div> }
                 { courses && <Course courses={courses} /> }
-            <a href = "/courses" className="right">See All Courses </a>
+            <a href = "/courses" className="right">See All Courses</a>
             </div>
             <div className="col-sm-3 border1 scr">
                 <div className = "head center">
                 <br />
-                <h4> <b>Recent Posts </b></h4>
+                <h4> <b>Recent Posts</b></h4>
                 <br />
                 </div>
                 { error1 && <div>{ error1 }</div> }

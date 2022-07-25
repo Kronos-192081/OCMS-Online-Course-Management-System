@@ -27,21 +27,23 @@ const Profile = () => {
                             setIsPending(false);
                             setError(null);
                         })
+                        else
+                        {
+                            setIsPending(false);
+                            setError(null);
+                        }
                     })
                 })
             }
             else
             {
               throw Error('could not fetch the data for that resource');
-
             }
         })
         .catch(err => {
           setIsPending(false);
           setError(err.message);
-        }
-
-        )
+        })
     }, [])
 
 
@@ -65,19 +67,19 @@ const Profile = () => {
         </Link>
       </li>
       <li className="nav-item navg1">
-        <Link className="nav-link active" to="/posts">
+        <Link className="nav-link active" to="/posts_admin">
           <img src="https://www.svgrepo.com/show/325504/playlist-play.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Posts</span>
         </Link>
       </li>
       <li className="nav-item navg1">
-        <Link className="nav-link active" to="/announcements">
+        <Link className="nav-link active" to="/announcements_admin">
           <img src="https://www.svgrepo.com/show/234457/megaphone-advertising.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Announcements</span>
         </Link>
       </li>
       <li className="nav-item navg1">
-        <Link className="nav-link active" to="/courses">
+        <Link className="nav-link active" to="/courses_admin">
           <img src="https://www.svgrepo.com/show/60373/books.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Courses</span>
         </Link>
@@ -94,11 +96,11 @@ const Profile = () => {
       <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
         <br />
         <br />
-        <div className=" containing2 center-text">
+        <div className="containing2 center-text">
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
-        { (!error) && (!isPending) && (profile!=null) && <Profile_Display profiles = { profile } />}
-        { (!error)&& (!isPending) && (profile==null) && <div className = "center"><h1>No Profile Found</h1></div>}
+        { (!error) && (!isPending) && (profile!=null) && <Profile_Display profiles={ profile } />}
+        { (!error) && (!isPending) && (profile==null) && <div className="center"><h1>No Profile Found</h1></div>}
         <div className = "center">
         { (!error) && (!isPending) && (profile == null) && <Link to="/edit"><button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}}>Create</button></Link>}
         { (!error) && (!isPending) && (profile != null) && <Link to="/edit"><button type="button" class="btn btn-primary" style ={{fontWeight:"bold"}}>Edit</button></Link> }
@@ -111,5 +113,3 @@ const Profile = () => {
 }
 
 export default Profile;
-
-/*<Announcements announcements={ announcements }*/

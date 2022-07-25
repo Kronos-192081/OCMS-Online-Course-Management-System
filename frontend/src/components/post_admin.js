@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react";
+import useFetch from "./useFetch";
+import {API_URL} from "../constants"
+import Post_admin_print from "./post_admin_print"
 import { useHistory, Link } from "react-router-dom";
 
-const DashBoard = () => {
-    const [name, setName] = useState('');
-    const history = useHistory();
-
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        fetch("http://localhost:5000/api/users/current", {
-            headers: { "Authorization": token }
-            })
-            .then(res => {
-                if(res.ok)
-                {
-                    res.json().then((msg) => {
-                    setName(msg.name);
-                    });
-                }
-                else history.push('/login');
-        })
-    }, [])
-
-    return (
-        
-<div className="container-fluid">
+const Post_admin = () =>{
+    const { error, isPending, data: posts } = useFetch(`${API_URL}/api/posts`);
+    return ( 
+        <div className="container-fluid">
   <div className="row">
       <nav id="sidebar" className="col-md-3 col-lg-2 d-md-block bgval2 hover-nav1 sidebar collapse ">
       <div className="pt-md-5">
@@ -68,20 +51,24 @@ const DashBoard = () => {
     </ul>
 </div>
       </nav>
-      <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
-      <div className="hero-image">
-        <div className="hero-text">
-            <h1>Welcome {name} !!!</h1>
-            <h6>@OCMS version 1.0.1</h6>
-          <span>
-            <Link to="/documentation"><button type="button" class="btn btn-outline-light" style ={{fontWeight:"bold"}}>Documentation</button></Link>
-          </span>
+      <div className="col-md-9 ml-sm-auto col-lg-10">
+        <br />
+      <div className="container">
+        <div className = "containing2 scr1">
+        <div className = "head center bold">Posts</div>
+        <div className = "center"><Link to="/post_create/1"><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Create Post</button></Link></div>
+        <br />
+        { error && <div>{ error }</div> }
+        { isPending && <div>Loading...</div> }
+        { posts && <Post_admin_print posts ={ posts } /> }
         </div>
-      </div>
+        <br />
+        <br />
+        </div>
       </div>
   </div>
 </div>
-  );
+     );
 }
 
-export default DashBoard;
+export default Post_admin;

@@ -8,8 +8,8 @@ const Post = ({ posts }) => {
           <div className="d-flex w-100 justify-content-between" key={post._id}>
             <h5 className="mb-1 cobalt"> { post.title }</h5>
           </div>
-          <h6 className="mb-1"> {post.heading }</h6>
-          <p className="mb-1"> Click to see more ...</p>
+          <h6 className="mb-1"> { post.heading }</h6>
+          <p className="mb-1">Click to see more ...</p>
           </Link>
         ))}
         </div>

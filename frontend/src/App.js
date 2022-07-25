@@ -10,6 +10,8 @@ import DashNavBar from './components/dashNavBar';
 import Documentation from './components/documentation';
 import Profile from './components/profile';
 import Edit from './components/edit';
+import PostEdit from './components/post_edit';
+import Post_admin from './components/post_admin';
 import Announce from './components/announcementlist';
 import Announce_indi from './components/announcements_individual';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -41,6 +43,18 @@ function App() {
     <Route exact path="/documentation">
       <DashNavBar />
       <Documentation />
+    </Route>
+    <Route exact path="/post_admin">
+      <DashNavBar />
+      <Post_admin />
+    </Route>
+    <Route exact path="/post_edit/:id">
+      <DashNavBar />
+      <PostEdit />
+    </Route>
+    <Route exact path="/post_create/:id">
+      <DashNavBar />
+      <PostEdit />
     </Route>
     <Route path="*">
       <NavBar />

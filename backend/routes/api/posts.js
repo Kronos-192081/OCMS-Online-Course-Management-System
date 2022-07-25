@@ -9,10 +9,6 @@ const Post = require('../../models/Post');
 //@routes GET api requests
 //@desc   Test Post Route
 //@access Public
-router.get('/test', (req, res) => res.json({msg: 'Posts works'}));
-//@routes GET api requests
-//@desc   Test Post Route
-//@access Public
 router.get('/', (req, res)=> {
     Post.find()
         .sort({ date: -1})
@@ -47,17 +43,11 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 router.post('/:id/update', passport.authenticate('jwt', {session: false}), (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
-            if(req.body.title != undefined)
-            {
-            post.title = req.body.title;
-            }
-            if(req.body.heading != undefined)
-            {
-            post.heading = req.body.heading;
-            }
-            post.link = req.body.link;
-            post.content = req.body.content;
-            post.tags = req.body.tags;
+            if(req.body.title) post.title = req.body.title; else post.title = "";
+            if(req.body.heading) post.heading = req.body.heading; else post.heading = "";
+            if(req.body.link) post.link = req.body.link; else post.link = "";
+            if(req.body.content) post.content = req.body.content; else post.content = "";
+            if(req.body.tags) post.tags = req.body.tags; else post.tags = "";
             post.save().then(post => res.json(post));
         })
         .catch(err => res.status(404).json({ noBlog: 'No post found'}));

@@ -24,12 +24,12 @@ router.post('/', (req, res) => {
 router.post('/edit', passport.authenticate('jwt', {session: false}), (req, res) =>{
     const profileFields = {};
     profileFields.user = req.user.id;
-    if(req.body.name)profileFields.name = req.body.name;
-    if(req.body.address)profileFields.address = req.body.address;
-    if(req.body.subjects)profileFields.subjects = req.body.subjects;
-    if(req.body.education)profileFields.education = req.body.education;
-    if(req.body.teaching)profileFields.teaching = req.body.teaching;
-    if(req.body.contact)profileFields.contact = req.body.contact;
+    if(req.body.name) profileFields.name = req.body.name; else profileFields.name = "";
+    if(req.body.address) profileFields.address = req.body.address; else profileFields.address = "";
+    if(req.body.subjects) profileFields.subjects = req.body.subjects; else profileFields.subjects = "";
+    if(req.body.education) profileFields.education = req.body.education; else profileFields.education = "";
+    if(req.body.teaching) profileFields.teaching = req.body.teaching; else profileFields.teaching = "";
+    if(req.body.contact) profileFields.contact = req.body.contact; else profileFields.contact = "";
 
     Profile.findOne({ user: req.user.id })
         .then(profile => {

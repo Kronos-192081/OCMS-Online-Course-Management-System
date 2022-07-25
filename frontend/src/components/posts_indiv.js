@@ -1,7 +1,6 @@
 import Print_Post from "./posts_indiv_print";
 import useFetch from "./useFetch";
 import { useParams } from "react-router-dom";
-import Post from "./post";
 
 const Post_indi = () => {
     const { id } = useParams();
@@ -13,7 +12,7 @@ const Post_indi = () => {
         <br />
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
-        { post && <Print_Post post={post} /> }
+        { post && <Print_Post post={ post } /> }
         <br />
         </div>
         </div>

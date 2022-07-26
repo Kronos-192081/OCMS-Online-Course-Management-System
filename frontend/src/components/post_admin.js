@@ -55,8 +55,8 @@ const Post_admin = () =>{
         <br />
       <div className="container">
         <div className = "containing2 scr1">
-        <div className = "head center bold">Posts</div>
-        <div className = "center"><Link to="/post_create/1"><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Create Post</button></Link></div>
+        <div className = "head center bold">Posts<br />
+        <Link to="/post_create/1"><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Create Post</button></Link></div>
         <br />
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }

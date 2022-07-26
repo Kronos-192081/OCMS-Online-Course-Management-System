@@ -3,6 +3,8 @@ import Accordion from 'react-bootstrap/Accordion';
 import { Link } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 function reformatDate(dateStr)
 {
@@ -32,6 +34,22 @@ function OnDelete(id)
     })
 }
 
+const submit = (id) => {
+  confirmAlert({
+    title: 'Confirm to Delete',
+    message: 'Are you sure you want to delete this item ?',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => OnDelete(id)
+      },
+      {
+        label: 'No'
+      }
+    ]
+  });
+};
+
 const Post_admin_print = ({ posts }) => {
     return ( 
         <Accordion>
@@ -45,7 +63,7 @@ const Post_admin_print = ({ posts }) => {
                 { <h6>{ renderMarkup(post.content) }</h6> }
                 <h6> Tags: {post.tags} </h6>
                 <br />
-                <button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}} onClick={()=>{OnDelete(post._id)}}>Delete</button>
+                <button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}} onClick={()=>{submit(post._id)}}>Delete</button>
                 <div className = "right"> <Link to={ `/post_edit/${post._id}`}><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Edit</button></Link></div>
            </Accordion.Body>
            </Accordion.Item>

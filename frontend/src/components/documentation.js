@@ -24,19 +24,19 @@ const Documentation = () => {
         </Link>
       </li>
       <li className="nav-item navg1">
-        <Link className="nav-link active" to="/posts">
+        <Link className="nav-link active" to="/post_admin">
           <img src="https://www.svgrepo.com/show/325504/playlist-play.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Posts</span>
         </Link>
       </li>
       <li className="nav-item navg1">
-        <Link className="nav-link active" to="/announcements">
+        <Link className="nav-link active" to="/announcements_admin">
           <img src="https://www.svgrepo.com/show/234457/megaphone-advertising.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Announcements</span>
         </Link>
       </li>
       <li className="nav-item navg1">
-        <Link className="nav-link active" to="/courses">
+        <Link className="nav-link active" to="/courses_admin">
           <img src="https://www.svgrepo.com/show/60373/books.svg" alt="logo" width="24" height="24" className="d-inline-block align-text-top" />
           <span className="ml-2">Manage Courses</span>
         </Link>

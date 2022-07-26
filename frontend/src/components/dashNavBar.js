@@ -20,6 +20,7 @@ const DashNavBar = () => {
   </div>
   <div className="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
       <div>
+          <button type="button" className="btn" style = {{backgroundColor: "purple"}}><Link to="/" style={{color: "white", fontWeight: "bold"}} target = "_blank">Home</Link></button> &nbsp;
           <button type="button" className="btn btn-danger"><a href="https://www.google.com" style={{color: "white" ,fontWeight: "bold"}} target = "_blank">Messages</a></button> &nbsp;
           <button type="button" className="btn btn-dark"><Link to="/login" onClick={LogOut} style={{color: "white", fontWeight: "bold"}}>Sign Out</Link></button>
       </div>

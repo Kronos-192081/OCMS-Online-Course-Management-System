@@ -1,53 +1,11 @@
-import { useEffect, useState } from "react";
-import Profile_Display from "./profile_display";
-import { Link } from "react-router-dom";
+import useFetch from "./useFetch";
+import {API_URL} from "../constants"
+import Announcements_admin_print from "./announcements_admin_print";
+import { useHistory, Link } from "react-router-dom";
 
-const Profile = () => {
-    const [profile, setProfile] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        fetch("http://localhost:5000/api/users/current", {
-        headers: { "Authorization": token }
-        })
-        .then(res => {
-            if(res.ok)
-            {
-                res.json().then((msg) => {
-                    fetch("http://localhost:5000/api/profile", {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(msg)
-                    })
-                    .then(resn => {
-                        if(resn.ok) resn.json().then(data => {
-                            setProfile(data);
-                            setIsPending(false);
-                            setError(null);
-                        })
-                        else
-                        {
-                            setIsPending(false);
-                            setError(null);
-                        }
-                    })
-                })
-            }
-            else
-            {
-              throw Error('could not fetch the data for that resource');
-            }
-        })
-        .catch(err => {
-          setIsPending(false);
-          setError(err.message);
-        })
-    }, [])
-
-
-    return (
+const Announcement_admin = () =>{
+    const { error, isPending, data: announcements } = useFetch(`${API_URL}/api/announcements`);
+    return ( 
         <div className="container-fluid">
   <div className="row">
       <nav id="sidebar" className="col-md-3 col-lg-2 d-md-block bgval2 hover-nav1 sidebar collapse ">
@@ -93,23 +51,24 @@ const Profile = () => {
     </ul>
 </div>
       </nav>
-      <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
+      <div className="col-md-9 ml-sm-auto col-lg-10">
         <br />
+      <div className="container">
+        <div className = "containing2 scr1">
+        <div className = "head center bold">Announcements<br />
+        <Link to="/announcement_create/1"><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Create Announcement</button></Link></div>
         <br />
-        <div className="containing2 center-text">
         { error && <div>{ error }</div> }
         { isPending && <div>Loading...</div> }
-        { (!error) && (!isPending) && (profile!=null) && <Profile_Display profiles={ profile } />}
-        { (!error) && (!isPending) && (profile==null) && <div className="center"><h1>No Profile Found</h1></div>}
-        <div className = "center">
-        { (!error) && (!isPending) && (profile == null) && <Link to="/edit"><button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}}>Create</button></Link>}
-        { (!error) && (!isPending) && (profile != null) && <Link to="/edit"><button type="button" class="btn btn-primary" style ={{fontWeight:"bold"}}>Edit</button></Link> }
+        { announcements && <Announcements_admin_print announcements ={ announcements } /> }
         </div>
-     </div>
+        <br />
+        <br />
+        </div>
       </div>
   </div>
 </div>
-    );
+     );
 }
 
-export default Profile;
+export default Announcement_admin;

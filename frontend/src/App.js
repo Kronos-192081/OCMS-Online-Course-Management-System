@@ -22,6 +22,8 @@ import Class from './components/classlist';
 import Subjects from './components/subjectlist';
 import Proceedings from './components/subject_course_pro';
 import Error from './components/error_page';
+import Announcement_admin from './components/announcements_admin';
+import AnnouncementEdit from './components/announcement_edit';
 
 function App() {
   return (
@@ -55,6 +57,18 @@ function App() {
     <Route exact path="/post_create/:id">
       <DashNavBar />
       <PostEdit />
+    </Route>
+    <Route exact path="/announcements_admin">
+      <DashNavBar />
+      <Announcement_admin />
+    </Route>
+    <Route exact path="/announcement_edit/:id">
+      <DashNavBar />
+      <AnnouncementEdit />
+    </Route>
+    <Route exact path="/announcement_create/:id">
+      <DashNavBar />
+      <AnnouncementEdit />
     </Route>
     <Route path="*">
       <NavBar />

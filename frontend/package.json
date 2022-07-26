@@ -10,6 +10,7 @@
     "notyf": "^3.10.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
+    "react-confirm-alert": "^3.0.6",
     "react-dom": "^18.2.0",
     "react-pdf": "^5.7.2",
     "react-render-markup": "^3.5.0",

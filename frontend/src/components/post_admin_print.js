@@ -15,14 +15,12 @@ function reformatDate(dateStr)
 function OnDelete(id)
 {
     const notyf = new Notyf();
-    const token = localStorage.getItem("token");
-    console.log("reached0");
+    const ocms_token = localStorage.getItem("ocms_token");
     fetch('http://localhost:5000/api/posts/' + id, {
     method: 'DELETE',
-    headers: { "Authorization": token }
+    headers: { "Authorization": ocms_token }
     })
     .then((res) => {
-      console.log("reached1");
         if(res.ok)
         {
             notyf.success("Post deleted successfully!!!");

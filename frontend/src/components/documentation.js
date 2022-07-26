@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Document, Page } from 'react-pdf';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const Documentation = () => {
+  const history = useHistory();
+  
+  useEffect(() => {
+    const ocms_token = localStorage.getItem('ocms_token');
+    fetch("http://localhost:5000/api/users/current", {
+        headers: { "Authorization": ocms_token }
+        })
+        .then(res => {
+            if(!res.ok) history.push('/login');
+    })
+  }, [])
+
     return (
         <div className="container-fluid">
   <div className="row">

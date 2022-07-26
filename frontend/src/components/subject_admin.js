@@ -1,59 +1,35 @@
 import { useEffect, useState } from "react";
-import Profile_Display from "./profile_display";
-import { Link, useHistory } from "react-router-dom";
-import { Notyf } from "notyf";
-import 'notyf/notyf.min.css';
+import { useHistory, Link } from "react-router-dom";
+import useFetch from "./useFetch";
+import { useParams } from "react-router-dom";
+import Subject_indiv_admin from "./subject_indiv_admin"
 
-const Profile = () => {
-    const [profile, setProfile] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-    const [error, setError] = useState(null);
+const Subject_admin = () => {
+    const [name, setName] = useState('');
     const history = useHistory();
-    const notyf = new Notyf();
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
         fetch("http://localhost:5000/api/users/current", {
-        headers: { "Authorization": ocms_token }
-        })
-        .then(res => {
-            if(res.ok)
-            {
-                res.json().then((msg) => {
-                    fetch("http://localhost:5000/api/profile", {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(msg)
-                    })
-                    .then(resn => {
-                        if(resn.ok) resn.json().then(data => {
-                            setProfile(data);
-                            setIsPending(false);
-                            setError(null);
-                        })
-                        else
-                        {
-                            setIsPending(false);
-                            setError(null);
-                        }
-                    })
-                })
-            }
-            else
-            {
-              history.push('/login');
-              notyf.error('Could not fetch the data for that resource');
-            }
-        })
-        .catch(err => {
-          setIsPending(false);
-          setError(err.message);
+            headers: { "Authorization": ocms_token }
+            })
+            .then(res => {
+                if(res.ok)
+                {
+                    res.json().then((msg) => {
+                    setName(msg.name);
+                    });
+                }
+                else history.push('/login');
         })
     }, [])
 
+    const { id, class_id } = useParams();
+    const { error: error2, isPending: isPending2, data: course } = useFetch('http://localhost:5000/api/courses/' + id);
 
     return (
-        <div className="container-fluid">
+        
+<div className="container-fluid">
   <div className="row">
       <nav id="sidebar" className="col-md-3 col-lg-2 d-md-block bgval2 hover-nav1 sidebar collapse ">
       <div className="pt-md-5">
@@ -99,22 +75,20 @@ const Profile = () => {
 </div>
       </nav>
       <div className="col-md-9 ml-sm-auto col-lg-10 custom-body">
+      <div className=" container">
+        <div className = "containing3">
         <br />
-        <br />
-        <div className="containing2 center-text">
-        { error && <div>{ error }</div> }
-        { isPending && <div>Loading...</div> }
-        { (!error) && (!isPending) && (profile!=null) && <Profile_Display profiles={ profile } />}
-        { (!error) && (!isPending) && (profile==null) && <div className="center"><h1>No Profile Found</h1></div>}
-        <div className = "center">
-        { (!error) && (!isPending) && (profile == null) && <Link to="/edit"><button type="button" class="btn btn-danger" style ={{fontWeight:"bold"}}>Create</button></Link>}
-        { (!error) && (!isPending) && (profile != null) && <Link to="/edit"><button type="button" class="btn btn-primary" style ={{fontWeight:"bold"}}>Edit</button></Link> }
+        { error2 && <div>{ error2 }</div> }
+        { isPending2 && <div>Loading...</div> }
+        { course && <Subject_indiv_admin course={course} class_id = { class_id }/> }
         </div>
-     </div>
-      </div>
+        <br />
+        <br />
+    </div>
+    </div> 
   </div>
 </div>
-    );
+  );
 }
 
-export default Profile;
+export default Subject_admin;

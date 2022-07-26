@@ -17,9 +17,9 @@ const PostEdit = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const ocms_token = localStorage.getItem('ocms_token');
         fetch("http://localhost:5000/api/users/current", {
-        headers: { "Authorization": token }
+        headers: { "Authorization": ocms_token }
         })
         .then(res => {
             if(res.ok)
@@ -47,8 +47,8 @@ const PostEdit = () => {
             }
             else
             {
-              throw Error('could not fetch the data for that resource');
-
+              history.push('/login');
+              notyf.error("Unauthorised");
             }
         })
         .catch(err => {
@@ -60,13 +60,13 @@ const PostEdit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = { title, heading, content, link, tags };
-        const token = localStorage.getItem('token');
+        const ocms_token = localStorage.getItem('ocms_token');
         setIsPendingUpdate(true);
         if(id !== "1")
         {
             fetch('http://localhost:5000/api/posts/' + id + '/update', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" , "Authorization": token },
+            headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
             })
             .then((res) => {
@@ -82,7 +82,7 @@ const PostEdit = () => {
         {
             fetch('http://localhost:5000/api/posts/', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" , "Authorization": token },
+            headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
             })
             .then((res) => {
@@ -173,8 +173,9 @@ const PostEdit = () => {
                     onChange={(e) => setLink(e.target.value)}
                 />
                 <label>Content</label>
-                <input 
-                    type="text"
+                <textarea
+                    rows="10"
+                    cols="47"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />

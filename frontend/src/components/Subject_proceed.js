@@ -17,6 +17,7 @@ const Subject_proceed = ({course, class_id, pro_id}) => {
     })
 
 
+
     return ( 
         <div className = "Individual">
             <div className = "head center bold">Subject Proceedings of {subject.Name}</div>
@@ -36,8 +37,10 @@ const Subject_proceed = ({course, class_id, pro_id}) => {
                 <tr>
                 <td>{tab.Topic}</td>
                 <td>{tab.details}</td>
-                <td><a href = {tab.video_link} target ="_blank">Link</a></td>
-                <td><a href = {tab.reading_link}target = "_blank">Link</a></td>
+                {tab.video_link && <td><a href = {tab.video_link} target ="_blank">Link</a></td>}
+                {!tab.video_link && <td>No Link</td>}
+                {tab.reading_link && <td><a href = {tab.reading_link}target = "_blank">Link</a></td>}
+                {!tab.reading_link && <td>No Link</td>}
                 </tr>
             ))}
              </table>

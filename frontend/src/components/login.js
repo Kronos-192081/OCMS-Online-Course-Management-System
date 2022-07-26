@@ -28,7 +28,7 @@ const Login = () => {
             if(res.ok)
             {
                 res.json().then((msg) => {
-                    localStorage.setItem('token', msg.token);
+                    localStorage.setItem('ocms_token', msg.token);
                     notyf.success("Logged in successfully!!!");
                     history.push('/dashboard');
                 })

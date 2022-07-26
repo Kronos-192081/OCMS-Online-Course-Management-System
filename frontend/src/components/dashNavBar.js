@@ -4,7 +4,7 @@ import 'notyf/notyf.min.css';
 
 const DashNavBar = () => {
   const LogOut = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('ocms_token');
     const notyf = new Notyf();
     notyf.success("Logged out successfully!!!");
   }

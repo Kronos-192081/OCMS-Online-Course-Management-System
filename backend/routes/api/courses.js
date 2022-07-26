@@ -36,12 +36,8 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 router.post('/:id/update', passport.authenticate('jwt', { session: false }), (req, res) => {
     Course.findById(req.params.id)
         .then(course => {
-            if (req.body.course_name != undefined) {
-                course.course_name = req.body.course_name;
-            }
-            if (req.body.note != undefined) {
-                course.note = req.body.note;
-            }
+            if (req.body.course_name) course.course_name = req.body.course_name;
+            if (req.body.note) course.note = req.body.note;
             course.save().then(course => res.json(course));
         })
         .catch(err => res.status(404).json({ noCourse: 'No course with that ID found' }));
@@ -67,7 +63,7 @@ router.post('/sub/:id', passport.authenticate('jwt', { session: false }), (req, 
                 description: req.body.description
             }
 
-            course.sub_course.unshift(newsub);
+            course.sub_course.push(newsub);
             course.save().then(course => res.json(course));
         })
         .catch(err => res.status(404).json({ noCourse: 'No course with that ID found' }));
@@ -107,7 +103,7 @@ router.delete('/sub/:id/:sub_id', passport.authenticate('jwt', { session: false 
         .catch(err => res.status(404).json({ nosub_course: 'Sub_Course does not exist' }));
 });
 
-// Add a Sub-Course
+// Add Subjects under a sub-course
 
 router.post('/sub/subject/:id/:sub_id', passport.authenticate('jwt', { session: false }), (req, res) => {
     Course.findById(req.params.id)
@@ -123,14 +119,14 @@ router.post('/sub/subject/:id/:sub_id', passport.authenticate('jwt', { session: 
                 descr: req.body.description,
                 links: req.body.links
             }
-            course.sub_course[ind].subjects.unshift(newSubject);
+            course.sub_course[ind].subjects.push(newSubject);
             course.save().then(course => res.json(course));
         })
         .catch(err => res.status(404).json({ noCourse: 'No course with that ID found' }));
 });
 
 //Update Subjects under a sub-course
-router.post('/sub/subject/:id/:sub_id/:subject_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.post('/sub/subject/update/:id/:sub_id/:subject_id', passport.authenticate('jwt', { session: false }), (req, res) => {
     Course.findById(req.params.id)
         .then(course => {
             if (course.sub_course.filter(sub => sub._id.toString() === req.params.sub_id).length === 0) {

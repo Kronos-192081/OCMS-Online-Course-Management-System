@@ -24,6 +24,14 @@ import Proceedings from './components/subject_course_pro';
 import Error from './components/error_page';
 import Announcement_admin from './components/announcements_admin';
 import AnnouncementEdit from './components/announcement_edit';
+import Courses_admin from './components/courses_admin';
+import CourseEdit from './components/course_edit';
+import ClassEdit from './components/class_edit';
+import SubEdit from './components/subject_edit';
+import SubProEdit from './components/subject_proceeding_edit';
+import Classlist_admin from './components/classlist_admin';
+import Subject_admin from './components/subject_admin';
+import Proceedings_admin from './components/subject_course_pro_admin';
 
 function App() {
   return (
@@ -69,6 +77,54 @@ function App() {
     <Route exact path="/announcement_create/:id">
       <DashNavBar />
       <AnnouncementEdit />
+    </Route>
+    <Route exact path="/course_edit/:id">
+      <DashNavBar />
+      <CourseEdit />
+    </Route>
+    <Route exact path="/course_create/:id">
+      <DashNavBar />
+      <CourseEdit />
+    </Route>
+    <Route exact path="/class_edit/:id/:class_id">
+      <DashNavBar />
+      <ClassEdit />
+    </Route>
+    <Route exact path="/class_create/:id/:class_id">
+      <DashNavBar />
+      <ClassEdit />
+    </Route>
+    <Route exact path="/sub_edit/:id/:class_id/:pro_id">
+      <DashNavBar />
+      <SubEdit />
+    </Route>
+    <Route exact path="/sub_create/:id/:class_id/:pro_id">
+      <DashNavBar />
+      <SubEdit />
+    </Route>
+    <Route exact path="/subpro_edit/:id/:class_id/:pro_id/:tab_id">
+      <DashNavBar />
+      <SubProEdit />
+    </Route>
+    <Route exact path="/subpro_create/:id/:class_id/:pro_id/:tab_id">
+      <DashNavBar />
+      <SubProEdit />
+    </Route>
+    <Route exact path="/courses_admin">
+      <DashNavBar />
+      <Courses_admin />
+    </Route>
+    <Route exact path="/classlist_admin/:id">
+      <DashNavBar />
+      <Classlist_admin />
+    </Route>
+    <Route exact path="/subject_admin/:id/:class_id">
+      <DashNavBar />
+      <Subject_admin />
+    </Route>
+    <Route exact path="/proceed_admin/:id/:class_id/:pro_id">
+      <DashNavBar />
+      <Proceedings_admin />
     </Route>
     <Route path="*">
       <NavBar />

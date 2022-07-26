@@ -2,9 +2,29 @@ import useFetch from "./useFetch";
 import {API_URL} from "../constants"
 import Post_admin_print from "./post_admin_print"
 import { useHistory, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Notyf } from "notyf";
+import 'notyf/notyf.min.css';
 
 const Post_admin = () =>{
     const { error, isPending, data: posts } = useFetch(`${API_URL}/api/posts`);
+    const history = useHistory();
+    const notyf = new Notyf();
+
+    useEffect(() => {
+        const ocms_token = localStorage.getItem('ocms_token');
+        fetch("http://localhost:5000/api/users/current", {
+            headers: { "Authorization": ocms_token }
+            })
+            .then(res => {
+                if(!res.ok)
+                {
+                  history.push('/login');
+                  notyf.error("Unauthorised");
+                }
+        })
+    }, [])
+
     return ( 
         <div className="container-fluid">
   <div className="row">

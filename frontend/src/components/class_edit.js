@@ -1,21 +1,17 @@
 import { useState, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
 
-const Edit = () => {
+const ClassEdit = () => {
     const notyf = new Notyf();
-    const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
-    const [subjects, setSubjects] = useState('');
-    const [education, setEducation] = useState('');
-    const [teaching, setTeaching] = useState('');
-    const [contact, setContact] = useState('');
-    const [profile_exists, SetProfile_exists] = useState(false);
+    const [Class, setClass] = useState('');
+    const [description, setDescription] = useState('');
     const [isPendingUpdate, setIsPendingUpdate] = useState(false);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
     const history = useHistory();
+    const { id, class_id } = useParams();
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
@@ -25,36 +21,13 @@ const Edit = () => {
         .then(res => {
             if(res.ok)
             {
-                res.json().then((msg) => {
-                    fetch("http://localhost:5000/api/profile", {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(msg)
-                    })
-                    .then(resn => {
-                        if(resn.ok) resn.json().then(data => {
-                            setName(data.name);
-                            setAddress(data.address);
-                            setSubjects(data.subjects);
-                            setTeaching(data.teaching);
-                            setEducation(data.education);
-                            setContact(data.contact);
-                            SetProfile_exists(true);
-                            setIsPending(false);
-                            setError(null);
-                        })
-                        else
-                        {
-                            setIsPending(false);
-                            setError(null);
-                        }
-                    })
-                })
+                setIsPending(false);
+                setError(null);
             }
             else
             {
               history.push('/login');
-              notyf.error('Could not fetch the data for that resource');
+              notyf.error("Unauthorised");
             }
         })
         .catch(err => {
@@ -65,22 +38,41 @@ const Edit = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name, address, subjects, education, teaching, contact };
+        const data = { Class, description };
         const ocms_token = localStorage.getItem('ocms_token');
         setIsPendingUpdate(true);
-        fetch('http://localhost:5000/api/profile/edit', {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
-        body: JSON.stringify(data)
-        })
-        .then((res) => {
-            setIsPendingUpdate(false);
-            if(res.ok)
-            {
-                notyf.success("Profile updated successfully!!!");
-                history.push('/profile');
-            }
-        })
+        if(class_id !== "1")
+        {
+            fetch('http://localhost:5000/api/courses/' + id + '/update/sub/' + class_id, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
+            body: JSON.stringify(data)
+            })
+            .then((res) => {
+                setIsPendingUpdate(false);
+                if(res.ok)
+                {
+                    notyf.success("Class updated successfully!!!");
+                    history.push('/classlist_admin/' + id);
+                }
+            })
+        }
+        else
+        {
+            fetch('http://localhost:5000/api/courses/sub/' + id, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
+            body: JSON.stringify(data)
+            })
+            .then((res) => {
+                setIsPendingUpdate(false);
+                if(res.ok)
+                {
+                    notyf.success("Class created successfully!!!");
+                    history.push('/classlist_admin/' + id);
+                }
+            })
+        }
     }
     
     return (
@@ -137,48 +129,24 @@ const Edit = () => {
             { (!error) && (!isPending) &&
             <div className="col-md-12 m-auto">
               <br />
-              <h5 className="lead text-center" style ={{fontWeight: "bold"}}>{profile_exists?"Edit Profile":"Create Profile"}</h5>
+              <h5 className="lead text-center" style ={{fontWeight: "bold"}}>{(class_id==="1")?"Create Class":"Edit Class"}</h5>
               <br />
               <form onSubmit={handleSubmit}>
-                <label>Name</label>
+                <label>Class</label>
                 <input 
                     type="text"
                     required 
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={Class}
+                    onChange={(e) => setClass(e.target.value)}
                 />
-                <label>Address</label>
+                <label>Description</label>
                 <input 
                     type="text"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                />
-                <label>Subjects Offered</label>
-                <input 
-                    type="text"
-                    value={subjects}
-                    onChange={(e) => setSubjects(e.target.value)}
-                />
-                <label>Educational Background</label>
-                <input 
-                    type="text"
-                    value={education}
-                    onChange={(e) => setEducation(e.target.value)}
-                />
-                <label>Teaching Experience</label>
-                <input 
-                    type="text"
-                    value={teaching}
-                    onChange={(e) => setTeaching(e.target.value)}
-                />
-                <label>Contact Details</label>
-                <input 
-                    type="text"
-                    value={contact}
-                    onChange={(e) => setContact(e.target.value)}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
                 <br />
-                { !isPendingUpdate && <button>{profile_exists?"Edit Profile":"Create Profile"}</button> }
+                { !isPendingUpdate && <button>{(class_id==="1")?"Create Class":"Edit Class"}</button> }
                 { isPendingUpdate && <button disabled>Updating ...</button> }
             </form>
             </div>
@@ -191,4 +159,4 @@ const Edit = () => {
   );
 }
  
-export default Edit;
+export default ClassEdit;

@@ -17,9 +17,9 @@ const AnnouncementEdit = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const ocms_token = localStorage.getItem('ocms_token');
         fetch("http://localhost:5000/api/users/current", {
-        headers: { "Authorization": token }
+        headers: { "Authorization": ocms_token }
         })
         .then(res => {
             if(res.ok)
@@ -47,8 +47,8 @@ const AnnouncementEdit = () => {
             }
             else
             {
-              throw Error('could not fetch the data for that resource');
-
+              history.push('/login');
+              notyf.error('Could not fetch the data for that resource');
             }
         })
         .catch(err => {
@@ -60,13 +60,13 @@ const AnnouncementEdit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = {Heading, link, content, Subject, Time_Duration};
-        const token = localStorage.getItem('token');
+        const ocms_token = localStorage.getItem('ocms_token');
         setIsPendingUpdate(true);
         if(id !== "1")
         {
             fetch('http://localhost:5000/api/announcements/' + id + '/update', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" , "Authorization": token },
+            headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
             })
             .then((res) => {
@@ -82,7 +82,7 @@ const AnnouncementEdit = () => {
         {
             fetch('http://localhost:5000/api/announcements/', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" , "Authorization": token },
+            headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
             })
             .then((res) => {

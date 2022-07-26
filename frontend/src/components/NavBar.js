@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
-  const token = localStorage.getItem('token');
-  const dash = (token===null) ? {to : "/login"} : {to : "/dashboard"};
+  const ocms_token = localStorage.getItem('ocms_token');
+  const dash = (ocms_token===null) ? {to : "/login"} : {to : "/dashboard"};
 
   return (
     <nav className="navbar navbar-dark navbar-expand-lg bgval hover-nav ho_navbar">
@@ -29,7 +30,7 @@ const NavBar = () => {
         </ul>
         <ul className="navbar-nav">
           <li className="nav-item navg">
-            <Link className="nav-link active danger" aria-current="page" {...dash}><span className="tex">SignIn</span></Link>
+            <Link className="nav-link active danger" aria-current="page" {...dash}><span className="tex">{(ocms_token===null)?"SignIn":"Dashboard"}</span></Link>
           </li>
         </ul>
       </div>

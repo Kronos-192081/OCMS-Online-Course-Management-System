@@ -168,8 +168,9 @@ const AnnouncementEdit = () => {
                     onChange={(e) => setLink(e.target.value)}
                 />
                 <label>Content</label>
-                <input 
-                    type="text"
+                <textarea
+                    rows="10"
+                    cols="47"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />

@@ -73,13 +73,137 @@ const Documentation = () => {
       </nav>
       <div className="col-md-9 ml-sm-auto col-lg-10">
         <br />
-        <h3 className = "container center"><b>Documentation</b><a href = "#" target ="_blank">&nbsp;(Link to pdf)</a></h3>
+        <h3 className = "container center"><b>Documentation</b><a href = "#" target ="_blank">&nbsp;(Link to docs)</a></h3>
         <br />
-        <h6 style ={{fontSize: "17px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo tempus sodales. Suspendisse potenti. Donec sit amet eros imperdiet nisi interdum mollis nec a mi. Etiam ligula lacus, elementum eget leo sed, finibus bibendum tellus. Praesent id velit id lacus viverra tincidunt eget vel arcu. In ut odio nec nunc feugiat convallis vitae eu diam. Sed pulvinar laoreet dolor, ut condimentum nisi pulvinar at. Pellentesque volutpat risus odio, sit amet viverra dolor dapibus id. In molestie leo diam, eget ornare urna ultricies efficitur. Quisque facilisis, libero sit amet accumsan egestas, augue quam suscipit est, et elementum mi dolor id leo. Nullam lorem eros, egestas ac mauris ac, congue convallis arcu. Proin tortor nunc, ullamcorper in ligula eget, vulputate gravida orci.
-        Nunc hendrerit nulla in lacus tincidunt scelerisque. Vestibulum malesuada lorem vitae nisl euismod, ac porttitor sapien suscipit. Maecenas non velit at augue rhoncus pretium id nec neque. Pellentesque viverra nunc sit amet sodales euismod. Nullam tristique nulla quis magna suscipit, ut iaculis orci viverra. Nunc nulla massa, auctor non ultrices et, efficitur a magna. Duis eleifend congue mauris, feugiat pharetra diam semper id. Pellentesque luctus mollis tempor. Aliquam in molestie sapien. In venenatis lectus nec est mattis faucibus. Proin aliquet nibh sed eros vulputate pulvinar. Sed lacinia cursus nulla non pretium.
-        Mauris non dui dui. Donec ultrices tincidunt mi at euismod. Pellentesque commodo hendrerit ante a elementum. Nullam volutpat imperdiet elit, vitae fermentum nisl cursus sit amet. Pellentesque sit amet urna pulvinar, facilisis sem id, fringilla urna. Sed tempor commodo nulla eget tincidunt. Phasellus euismod erat sit amet felis consequat suscipit. Morbi eu sapien sed lectus luctus scelerisque at vel dolor. Praesent sit amet cursus nunc. Nullam consectetur non est vel feugiat.
-        Donec tincidunt metus ut libero vehicula, id vulputate leo eleifend. Proin sodales sapien libero, a ultrices ipsum blandit id. In bibendum egestas rutrum. Cras quis nisl consectetur, lacinia sapien eget, malesuada nulla. Curabitur ut mattis justo, tempor finibus nibh. Phasellus at sem commodo, condimentum turpis at, dapibus ante. Aenean vehicula bibendum enim quis sodales. Mauris in maximus ante. Nullam nisi dui, faucibus non elit nec, imperdiet bibendum dui. Ut placerat posuere fringilla. Nunc eleifend faucibus metus ac laoreet. Pellentesque sollicitudin dictum ipsum eu maximus. Vivamus vitae turpis ac felis volutpat lacinia nec sit amet tellus. Phasellus condimentum molestie purus, vitae aliquam magna mollis ut. Vestibulum eleifend vitae ex ac dignissim. Pellentesque vel vehicula quam.
-        Donec mollis risus quis dui ultricies vestibulum. Vivamus vitae sodales mauris, non sodales ex. Aliquam id eleifend quam. Praesent fringilla finibus leo vitae iaculis. Praesent vestibulum lorem fermentum, lacinia eros eget, congue neque. Donec mi nulla, dictum eu eleifend vestibulum, gravida a diam. Fusce hendrerit eros sed augue consectetur hendrerit. Nam sodales mi ut massa rhoncus rhoncus. Integer sollicitudin justo vitae imperdiet vehicula. Aliquam erat volutpat. Vestibulum eget velit dictum, finibus tortor vel, finibus enim. Aenean ex velit, malesuada vel blandit vitae, gravida vitae enim. Aliquam a ipsum pellentesque, dictum tellus non, mollis ligula. Suspendisse at massa eu nulla bibendum aliquam.
+        <h6 style ={{fontSize: "17px"}}>
+        <hr className = "style1"/>
+          <h5><b>Getting Started with OCMS</b></h5>
+          <hr className = "style1"/>
+          This system is built with ReactJS library for frontend and Nodejs (with Express ) in the backend. <br /> <br />
+          This app consists of various features which are listed below :- <br />
+          <ol>
+            <li>It has <b>Post Management System</b> in which the Admin can create, edit or delete a post from the admin dashboard which will be reflected in the Home.</li>
+            <li>The next important feature is <b>Announcement Management System</b> which is similar to the Post management system.</li>
+            <li>It also has <b>Course Management System</b>. The course management system provides the following features:-
+              <ol>
+                <li>Add or Edit or Delete a course. </li>
+                <li>Add or Edit or Delete a class under the course. </li>
+                <li>Add or Edit or Delete a subject under a class. </li>
+                <li>Add or Edit or Delete a table which displays the subject coverage (under a subject). </li>
+              </ol>
+            </li>
+            <li>This also contains miscellaneous things such as important links, address embeds, link embeds in posts, About Us page, Terms and Condition page etc.</li>
+            <li>It also has a login page which facilitates login to Admin Dashboard.</li>
+          </ol>
+          <br />
+          <hr className = "style1"/>
+          <h5><b>Create or Edit Profile</b></h5>
+          <hr className = "style1"/>
+          This part in the Admin Dashboard facilitates the create or edit of profile.<br /> <br />
+          Steps :- 
+          <ol>
+            <li>Click My Profile.</li>
+            If profile is not created it will show profile not found with a button to create the profile.
+            <li>Click on "Create" or "Edit" and fill the form</li>
+            <li>Click on "Create Profile" or "Edit Profile" and it will be created.</li>
+          </ol>
+          <br />
+          <hr className = "style1"/>
+          <h5><b>Manage Posts</b></h5>
+          <hr className = "style1"/>
+          This section in the Admin Dashboard facilitates the management (Create, Edit or Delete) of Posts. <br />  <br />
+          Steps to Create a Post :-
+          <ol>
+            <li>Click on the "Create Post" Button.</li>
+            <li>A form will be opened . Fill the form with relevant details.</li>
+            <li>Click on "Create Post" and it will be created.</li>
+          </ol>
+
+          Steps to Edit a post :-
+          <ol>
+            <li>Click on the post to be edited.</li>
+            <li>Click on "Edit".</li>
+            <li>Fill the necessary details. </li>
+            <li>Click "Edit Post" and it will be edited.</li>
+          </ol>
+
+          Steps to delete a post :-
+          <ol>
+            <li>Click on the post to be deleted.</li>
+            <li>Click on "Delete".</li>
+            <li>Click "Yes" on the popup and it will be deleted. </li>
+          </ol>
+          <br />
+
+          <hr className = "style1"/>
+
+          <h5><b>Manage Announcements</b></h5>
+          <hr className = "style1"/>
+          This section in the Admin Dashboard facilitates the management (Create, Edit or Delete) of Announcements. <br />  <br />
+          Steps to Create a Announcement :-
+          <ol>
+            <li>Click on the "Create Announcement" Button.</li>
+            <li>A form will be opened . Fill the form with relevant details.</li>
+            <li>Click on "Create Announcement" and it will be created.</li>
+          </ol>
+
+          Steps to Edit a announcement :-
+          <ol>
+            <li>Click on the announcement to be edited.</li>
+            <li>Click on "Edit".</li>
+            <li>Fill the necessary details. </li>
+            <li>Click "Edit Announcement" and it will be edited.</li>
+          </ol>
+
+          Steps to delete a announcement :-
+          <ol>
+            <li>Click on the announcement to be deleted.</li>
+            <li>Click on "Delete".</li>
+            <li>Click "Yes" on the popup and it will be deleted. </li>
+          </ol>
+          <br />
+          <hr className = "style1"/>
+
+          <h5><b>Manage Courses</b></h5>
+          <hr className = "style1"/>
+          This section in admin dashboard helps in managing courses. <br /> <br />
+
+          Steps for creating, editing and deleting is similar to the above (Posts and Announcements). <br /><br />
+
+          Click on "Click Here" of each course to move to the classes under the course and follow similar steps for creating, editing and deleting a class. <br /> <br />
+
+          Click on "Click here" again to move to subjects under each class and follow similar steps for creating, editing and deleting a subject. <br /> <br />
+
+          Click on "Click here" again to move to Subject coverage under each subject and follow similar steps to create, edit or delete a row in the coverage table. <br /> <br />
+
+          <br />
+          <hr className = "style1"/>
+
+          <h5><b>Documentation</b></h5>
+          <hr className = "style1"/>
+          This section of the admin panel contains a detailed writeup of each feature and miscellaneous items.
+          <br />
+          <br />
+          <hr className = "style1"/>
+
+          <h5><b>Miscellaneous Items (For Styling Purpose)</b></h5>
+          <hr className = "style1"/>
+          This is a comprehensive list (ignore the " ") to style texts, headings, add images and position them etc. <br /> <br />
+
+          <ol>
+            <li>To make a part of a text bold enclose that part of the text in the "&lt;b&gt;(your text here)&lt;/b&gt;" tags.</li>
+            <li>To make a part of a text underline enclose that part of the text in the "&lt;u&gt;(your text here)&lt;/u&gt;"tags.</li>
+            <li>To make a part of a text italics enclose that part of the text in the "&lt;i&gt;(your text here)&lt;/i&gt;"tags.</li>
+            <li>If you want to use multiple things like underline and bold then just enclose under both the tags (first opening tag of both and then closing tag of both). eg:"&lt;b&gt;&lt;u&gt;(your text here)&lt;/u&gt;&lt;/b&gt;" </li>
+            <li>If you want to colour a certain part of the text then enclose the text in "&lt;span style = "color: (your colour)"&gt;(your text here)&lt;/span&gt;"</li>
+            <li>If you want to increase the text size of a certain part then enclose the text in "&lt;span style = "font-size: (your font size)px"&gt;(your text here)&lt;/span&gt;" (Remember give a font size greater than 20px to see a change).</li>
+            <li>If you want to increase as well as change color then use both inside span that is both color and font-size. eg:"&lt;span style = " color: (your color); font-size: (your font size)px"&gt;(your text here)&lt;/span&gt;" </li>
+            <li>To center a sub-heading text enclose that in "&lt;div style = "font-size: (your font size)px" class = "center"&gt;(your text here)&lt;/div&gt;" The font-size and color properties are also there incase you want to have them also. If not required remove the style part entirely.</li>
+            <li>To give a horizontal line after a paragraph or any text use &lt;hr /&gt; tag</li>
+            <li>To give a line space after a paragraph or any text use &lt;br /&gt; tag</li>
+            <li>To insert a image in the content of a post or announcement use this tag (for left aligned image): &lt;img src = (proper image link) alt = "image" className = "img-fluid container2" /&gt;</li>
+            <li>To insert a image in the content of a post or announcement use this tag (for center aligned image): &lt; div class = "containing1&gt;&lt;img src = (proper image link) alt = "image" className = "img-fluid container2" /&gt;&lt;/div&gt;</li>
+          </ol>
         </h6>
       </div>
   </div>

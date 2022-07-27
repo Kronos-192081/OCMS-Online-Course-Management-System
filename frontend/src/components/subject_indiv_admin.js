@@ -55,7 +55,7 @@ const Subject_indiv_admin = ( { course, class_id }) => {
     return ( 
         <div className="row center">
             <div className = "head center bold">All subjects under {class1.Class} <br />
-            <Link to ={ `/sub_create/${course._id}/${class_id}/1`}><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Add Class</button></Link>
+            <Link to ={ `/sub_create/${course._id}/${class_id}/1`}><button type="button" class="btn btn-warning" style ={{fontWeight:"bold"}}>Add Subject</button></Link>
             </div>
             <br />
             {class1.subjects.map(subject => (

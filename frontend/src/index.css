@@ -661,3 +661,7 @@ h2 {
 .imp-pad{
   padding-top: 1em;
 }
+
+hr.style1{
+	border-top: 3px double #8c8b8b;
+}

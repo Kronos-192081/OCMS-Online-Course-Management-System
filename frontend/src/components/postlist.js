@@ -1,8 +1,9 @@
 import useFetch from "./useFetch";
 import Post from "./post";
+import {API_URL} from "../constants";
 
 const Posts = () => {
-    const { error, isPending, data: posts } = useFetch('http://localhost:5000/api/posts');
+    const { error, isPending, data: posts } = useFetch(API_URL + '/api/posts');
     return ( 
         <div className=" container" id="content">
         <div className = "containing2 scr1">

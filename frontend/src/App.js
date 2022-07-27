@@ -32,6 +32,8 @@ import SubProEdit from './components/subject_proceeding_edit';
 import Classlist_admin from './components/classlist_admin';
 import Subject_admin from './components/subject_admin';
 import Proceedings_admin from './components/subject_course_pro_admin';
+import Aboutus from './components/aboutus';
+import Terms_conditions from './components/Terms_conditions';
 
 function App() {
   return (
@@ -159,6 +161,12 @@ function App() {
       </Route>
       <Route exact path="/posts/:id">
         <Post_indi />
+      </Route>
+      <Route exact path="/aboutus">
+        <Aboutus/>
+      </Route>
+      <Route exact path="/termsnconditions">
+        <Terms_conditions/>
       </Route>
       <Route path="*">
         <Error />

@@ -4,12 +4,13 @@ import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import {API_URL} from "../constants";
 
 function OnDelete(id, sub_id, subject_id, table_id)
 {
     const notyf = new Notyf();
     const ocms_token = localStorage.getItem("ocms_token");
-    fetch('http://localhost:5000/api/courses/sub/subject/table/delete/' + id + '/' + sub_id + '/' + subject_id + '/' + table_id , {
+    fetch(API_URL + '/api/courses/sub/subject/table/delete/' + id + '/' + sub_id + '/' + subject_id + '/' + table_id , {
     method: 'DELETE',
     headers: { "Authorization": ocms_token }
     })

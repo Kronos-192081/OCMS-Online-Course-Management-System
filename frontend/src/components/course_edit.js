@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
 
 const CourseEdit = () => {
     const notyf = new Notyf();
@@ -15,7 +16,7 @@ const CourseEdit = () => {
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
         headers: { "Authorization": ocms_token }
         })
         .then(res => {
@@ -23,7 +24,7 @@ const CourseEdit = () => {
             {
                 if(id !== "1")
                 {
-                    fetch("http://localhost:5000/api/courses/" + id)
+                    fetch(API_URL + "/api/courses/" + id)
                     .then(resn => {
                         if(resn.ok) resn.json().then(data => {
                             setCourse_name(data.course_name);
@@ -58,7 +59,7 @@ const CourseEdit = () => {
         setIsPendingUpdate(true);
         if(id !== "1")
         {
-            fetch('http://localhost:5000/api/courses/' + id + '/update', {
+            fetch(API_URL + '/api/courses/' + id + '/update', {
             method: 'POST',
             headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
@@ -74,7 +75,7 @@ const CourseEdit = () => {
         }
         else
         {
-            fetch('http://localhost:5000/api/courses/', {
+            fetch(API_URL + '/api/courses/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)

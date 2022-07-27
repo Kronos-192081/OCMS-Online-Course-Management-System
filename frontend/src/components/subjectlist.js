@@ -1,10 +1,11 @@
 import useFetch from "./useFetch";
 import { useParams } from "react-router-dom";
 import Subject_indiv from "./Subjects_indiv";
+import {API_URL} from "../constants";
 
 const Subjects = () => {
     const { id, class_id } = useParams();
-    const { error: error2, isPending: isPending2, data: course } = useFetch('http://localhost:5000/api/courses/' + id);
+    const { error: error2, isPending: isPending2, data: course } = useFetch(API_URL + '/api/courses/' + id);
     return ( 
         <div className=" container">
         <div className = "containing3">

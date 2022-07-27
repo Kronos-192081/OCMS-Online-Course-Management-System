@@ -3,14 +3,18 @@ import { useParams } from "react-router-dom";
 import Subject_proceed_admin from "./subject_proceed_admin";
 import { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import {API_URL} from "../constants";
+import { Notyf } from "notyf";
+import 'notyf/notyf.min.css';
 
 const Proceedings_admin = () => {
     const [name, setName] = useState('');
     const history = useHistory();
+    const notyf = new Notyf();
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
             headers: { "Authorization": ocms_token }
             })
             .then(res => {
@@ -20,12 +24,16 @@ const Proceedings_admin = () => {
                     setName(msg.name);
                     });
                 }
-                else history.push('/login');
+                else 
+                {
+                  history.push('/login');
+                  notyf.error("Unauthorised");
+                }
         })
     }, [])
 
     const { id, class_id, pro_id } = useParams();
-    const { error: error2, isPending: isPending2, data: course } = useFetch('http://localhost:5000/api/courses/' + id);
+    const { error: error2, isPending: isPending2, data: course } = useFetch(API_URL + '/api/courses/' + id);
 
     return (
         

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
 
 const PostEdit = () => {
     const notyf = new Notyf();
@@ -18,7 +19,7 @@ const PostEdit = () => {
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
         headers: { "Authorization": ocms_token }
         })
         .then(res => {
@@ -26,7 +27,7 @@ const PostEdit = () => {
             {
                 if(id !== "1")
                 {
-                    fetch("http://localhost:5000/api/posts/" + id)
+                    fetch(API_URL + "/api/posts/" + id)
                     .then(resn => {
                         if(resn.ok) resn.json().then(data => {
                             setTitle(data.title);
@@ -64,7 +65,7 @@ const PostEdit = () => {
         setIsPendingUpdate(true);
         if(id !== "1")
         {
-            fetch('http://localhost:5000/api/posts/' + id + '/update', {
+            fetch(API_URL + '/api/posts/' + id + '/update', {
             method: 'POST',
             headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
@@ -80,7 +81,7 @@ const PostEdit = () => {
         }
         else
         {
-            fetch('http://localhost:5000/api/posts/', {
+            fetch(API_URL + '/api/posts/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)

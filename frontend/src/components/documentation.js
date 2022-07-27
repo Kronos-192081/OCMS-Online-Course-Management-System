@@ -1,18 +1,27 @@
 import React, { useEffect } from 'react';
 import { Document, Page } from 'react-pdf';
 import { Link, useHistory } from 'react-router-dom';
+import { Notyf } from "notyf";
+import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
+
 
 
 const Documentation = () => {
   const history = useHistory();
+  const notyf = new Notyf();
   
   useEffect(() => {
     const ocms_token = localStorage.getItem('ocms_token');
-    fetch("http://localhost:5000/api/users/current", {
+    fetch(API_URL + "/api/users/current", {
         headers: { "Authorization": ocms_token }
         })
         .then(res => {
-            if(!res.ok) history.push('/login');
+            if(!res.ok) 
+            {
+              history.push('/login');
+              notyf.error("Unauthorised");
+            }
     })
   }, [])
 

@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import useFetch from "./useFetch";
 import Course_admin from "./Course_admin";
+import {API_URL} from "../constants";
+import { Notyf } from "notyf";
+import 'notyf/notyf.min.css';
 
 const Courses_admin = () => {
     const [name, setName] = useState('');
     const history = useHistory();
+    const notyf = new Notyf();
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
             headers: { "Authorization": ocms_token }
             })
             .then(res => {
@@ -19,10 +23,14 @@ const Courses_admin = () => {
                     setName(msg.name);
                     });
                 }
-                else history.push('/login');
+                else 
+                {
+                  history.push('/login');
+                  notyf.error("Unauthorised");
+                }
         })
     }, [])
-    const { error: error2, isPending: isPending2, data: courses } = useFetch('http://localhost:5000/api/courses');
+    const { error: error2, isPending: isPending2, data: courses } = useFetch(API_URL + '/api/courses');
 
     return (
         

@@ -2,11 +2,12 @@ import useFetch from "./useFetch";
 import Announcements from "./announcement";
 import Post from "./post";
 import Course from "./course";
+import {API_URL} from "../constants";
 
 const Test = () => {
-  const { error, isPending, data: announcements } = useFetch('http://localhost:5000/api/announcements');
-  const { error: error1, isPending: isPending1, data: posts } = useFetch('http://localhost:5000/api/posts');
-  const { error: error2, isPending: isPending2, data: courses } = useFetch('http://localhost:5000/api/courses');
+  const { error, isPending, data: announcements } = useFetch(API_URL + '/api/announcements');
+  const { error: error1, isPending: isPending1, data: posts } = useFetch(API_URL + '/api/posts');
+  const { error: error2, isPending: isPending2, data: courses } = useFetch(API_URL + '/api/courses');
     return (
         <div className=" container" id="content">
           <br />

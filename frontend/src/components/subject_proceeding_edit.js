@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
 
 const SubProEdit = () => {
     const notyf = new Notyf();
@@ -17,7 +18,7 @@ const SubProEdit = () => {
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
         headers: { "Authorization": ocms_token }
         })
         .then(res => {
@@ -45,7 +46,7 @@ const SubProEdit = () => {
         setIsPendingUpdate(true);
         if(tab_id !== "1")
         {
-            fetch('http://localhost:5000/api/courses/sub/subject/table/update/' + id + '/' + class_id + '/' + pro_id + '/' + tab_id, {
+            fetch(API_URL + '/api/courses/sub/subject/table/update/' + id + '/' + class_id + '/' + pro_id + '/' + tab_id, {
             method: 'POST',
             headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)
@@ -61,7 +62,7 @@ const SubProEdit = () => {
         }
         else
         {
-            fetch('http://localhost:5000/api/courses/sub/subject/table/' + id + '/' + class_id + '/' + pro_id, {
+            fetch(API_URL + '/api/courses/sub/subject/table/' + id + '/' + class_id + '/' + pro_id, {
             method: 'POST',
             headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
             body: JSON.stringify(data)

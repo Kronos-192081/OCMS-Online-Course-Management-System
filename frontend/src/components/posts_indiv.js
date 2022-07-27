@@ -1,10 +1,11 @@
 import Print_Post from "./posts_indiv_print";
 import useFetch from "./useFetch";
 import { useParams } from "react-router-dom";
+import {API_URL} from "../constants";
 
 const Post_indi = () => {
     const { id } = useParams();
-    const { error, isPending, data: post } = useFetch('http://localhost:5000/api/posts/' + id);
+    const { error, isPending, data: post } = useFetch(API_URL + '/api/posts/' + id);
     return ( 
         <div className=" container" id="content">
         <div className = "containing2">

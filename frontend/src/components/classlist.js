@@ -4,12 +4,13 @@ import Class_indiv from "./class_indiv";
 import Course from "./course";
 import Post from "./post";
 import Post_course from "./Post_course";
+import {API_URL} from "../constants";
 
 const Class = () => {
    const { id } = useParams();
    console.log(id);
-    const { error: error2, isPending: isPending2, data: course } = useFetch('http://localhost:5000/api/courses/' + id);
-    const { error, isPending, data: posts } = useFetch('http://localhost:5000/api/posts');
+    const { error: error2, isPending: isPending2, data: course } = useFetch(API_URL + '/api/courses/' + id);
+    const { error, isPending, data: posts } = useFetch(API_URL + '/api/posts');
     return ( 
         <div className=" container">
             <div className="row">

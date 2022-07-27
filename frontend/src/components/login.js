@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
 
 const Login = () => {
     const notyf = new Notyf();
@@ -16,7 +17,7 @@ const Login = () => {
         e.preventDefault();
         const data = { email, password };
         setIsPending(true);
-        fetch('http://localhost:5000/api/users/login', {
+        fetch(API_URL + '/api/users/login', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)

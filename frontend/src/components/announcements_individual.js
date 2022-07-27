@@ -1,10 +1,11 @@
 import Print_Announce from "./announcement_indi_print";
 import useFetch from "./useFetch";
 import { useParams } from "react-router-dom";
+import {API_URL} from "../constants";
 
 const Announce_indi = () => {
     const { id } = useParams();
-    const { data: announcement, error, isPending } = useFetch('http://localhost:5000/api/announcements/' + id);
+    const { data: announcement, error, isPending } = useFetch(API_URL + '/api/announcements/' + id);
     return ( 
         <div className=" container" id="content">
         <div className = "containing2">

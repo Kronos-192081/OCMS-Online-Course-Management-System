@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
 
 const Edit = () => {
     const notyf = new Notyf();
@@ -19,14 +20,14 @@ const Edit = () => {
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
         headers: { "Authorization": ocms_token }
         })
         .then(res => {
             if(res.ok)
             {
                 res.json().then((msg) => {
-                    fetch("http://localhost:5000/api/profile", {
+                    fetch(API_URL + "/api/profile", {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(msg)
@@ -68,7 +69,7 @@ const Edit = () => {
         const data = { name, address, subjects, education, teaching, contact };
         const ocms_token = localStorage.getItem('ocms_token');
         setIsPendingUpdate(true);
-        fetch('http://localhost:5000/api/profile/edit', {
+        fetch(API_URL + '/api/profile/edit', {
         method: 'POST',
         headers: { "Content-Type": "application/json" , "Authorization": ocms_token },
         body: JSON.stringify(data)

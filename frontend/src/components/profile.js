@@ -3,6 +3,7 @@ import Profile_Display from "./profile_display";
 import { Link, useHistory } from "react-router-dom";
 import { Notyf } from "notyf";
 import 'notyf/notyf.min.css';
+import {API_URL} from "../constants";
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
@@ -13,14 +14,14 @@ const Profile = () => {
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
         headers: { "Authorization": ocms_token }
         })
         .then(res => {
             if(res.ok)
             {
                 res.json().then((msg) => {
-                    fetch("http://localhost:5000/api/profile", {
+                    fetch(API_URL + "/api/profile", {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(msg)

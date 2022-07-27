@@ -1,8 +1,9 @@
 import useFetch from "./useFetch";
 import Course from "./course";
+import {API_URL} from "../constants";
 
 const Courses = () => {
-    const { error: error2, isPending: isPending2, data: courses } = useFetch('http://localhost:5000/api/courses');
+    const { error: error2, isPending: isPending2, data: courses } = useFetch(API_URL + '/api/courses');
     return ( 
     <div className=" container">
         <div className = "containing3">

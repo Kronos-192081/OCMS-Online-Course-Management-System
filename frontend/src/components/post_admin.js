@@ -1,5 +1,5 @@
 import useFetch from "./useFetch";
-import {API_URL} from "../constants"
+import {API_URL} from "../constants";
 import Post_admin_print from "./post_admin_print"
 import { useHistory, Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ const Post_admin = () =>{
 
     useEffect(() => {
         const ocms_token = localStorage.getItem('ocms_token');
-        fetch("http://localhost:5000/api/users/current", {
+        fetch(API_URL + "/api/users/current", {
             headers: { "Authorization": ocms_token }
             })
             .then(res => {

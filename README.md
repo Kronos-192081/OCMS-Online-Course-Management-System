@@ -12,7 +12,7 @@ Before starting the backend server install the required dependencies with the fo
 npm install
 ```
 
-To run the project first create a file named *secrets.js* in the config folder containing the following code :
+To run the project first create a file named *secret.js* in the config folder containing the following code :
 
 ```
 module.exports = {
